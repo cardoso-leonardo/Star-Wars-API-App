@@ -10,6 +10,12 @@ import UIKit
 class PeopleCell: UITableViewCell {
     
     
+    var peopleViewModel: PeopleViewModel! {
+        didSet {
+            self.textLabel?.text = peopleViewModel.name
+            self.detailTextLabel?.text = peopleViewModel.birthYear
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

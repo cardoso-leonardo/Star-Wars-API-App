@@ -9,7 +9,12 @@ import Foundation
 
 struct PeopleViewModel {
     
-    var peopleList = [People]()
-
+    var name: String
+    var birthYear: String
     
+    init(people: People!) {
+        self.name = people.name
+        self.birthYear = people.birth_year
+    }
+
 }
