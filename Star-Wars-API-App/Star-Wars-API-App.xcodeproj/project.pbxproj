@@ -13,6 +13,7 @@
 		27BB5F60297A475C003000CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F5E297A475C003000CD /* Main.storyboard */; };
 		27BB5F62297A475D003000CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F61297A475D003000CD /* Assets.xcassets */; };
 		27BB5F65297A475D003000CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F63297A475D003000CD /* LaunchScreen.storyboard */; };
+		27BB5F75297A5274003000CD /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F74297A5274003000CD /* People.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		27BB5F61297A475D003000CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27BB5F64297A475D003000CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27BB5F66297A475D003000CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27BB5F74297A5274003000CD /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,64 @@
 		27BB5F57297A475C003000CD /* Star-Wars-API-App */ = {
 			isa = PBXGroup;
 			children = (
+				27BB5F73297A48E6003000CD /* Service */,
+				27BB5F6C297A4881003000CD /* Model */,
+				27BB5F6E297A4895003000CD /* View */,
+				27BB5F70297A48A3003000CD /* ViewModel */,
+				27BB5F71297A48AA003000CD /* Controller */,
+				27BB5F72297A48B9003000CD /* Utilities */,
 				27BB5F58297A475C003000CD /* AppDelegate.swift */,
 				27BB5F5A297A475C003000CD /* SceneDelegate.swift */,
-				27BB5F5C297A475C003000CD /* ViewController.swift */,
 				27BB5F5E297A475C003000CD /* Main.storyboard */,
-				27BB5F61297A475D003000CD /* Assets.xcassets */,
 				27BB5F63297A475D003000CD /* LaunchScreen.storyboard */,
 				27BB5F66297A475D003000CD /* Info.plist */,
 			);
 			path = "Star-Wars-API-App";
+			sourceTree = "<group>";
+		};
+		27BB5F6C297A4881003000CD /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				27BB5F74297A5274003000CD /* People.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		27BB5F6E297A4895003000CD /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		27BB5F70297A48A3003000CD /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		27BB5F71297A48AA003000CD /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				27BB5F5C297A475C003000CD /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		27BB5F72297A48B9003000CD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				27BB5F61297A475D003000CD /* Assets.xcassets */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		27BB5F73297A48E6003000CD /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +190,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				27BB5F5D297A475C003000CD /* ViewController.swift in Sources */,
+				27BB5F75297A5274003000CD /* People.swift in Sources */,
 				27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */,
 				27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */,
 			);
