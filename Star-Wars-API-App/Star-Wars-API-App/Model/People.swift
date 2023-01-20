@@ -9,13 +9,16 @@ import Foundation
 
 
 struct PeopleList: Codable {
+    let count: Int
+    let next: String?
+    let previous: String?
     let results: [People]
 }
 
 struct People: Codable {
     let name: String
-    let height: Int
-    let mass: Int
+    let height: String
+    let mass: String
     let hair_color: String
     let eye_color: String
     let birth_year: String

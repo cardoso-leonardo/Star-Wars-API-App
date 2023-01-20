@@ -14,6 +14,8 @@
 		27BB5F62297A475D003000CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F61297A475D003000CD /* Assets.xcassets */; };
 		27BB5F65297A475D003000CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F63297A475D003000CD /* LaunchScreen.storyboard */; };
 		27BB5F75297A5274003000CD /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F74297A5274003000CD /* People.swift */; };
+		27BB5F77297A53EF003000CD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F76297A53EF003000CD /* Service.swift */; };
+		27BB5F79297A5A03003000CD /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F78297A5A03003000CD /* PeopleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		27BB5F64297A475D003000CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27BB5F66297A475D003000CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		27BB5F74297A5274003000CD /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
+		27BB5F76297A53EF003000CD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
+		27BB5F78297A5A03003000CD /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,7 @@
 		27BB5F70297A48A3003000CD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				27BB5F78297A5A03003000CD /* PeopleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 		27BB5F73297A48E6003000CD /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				27BB5F76297A53EF003000CD /* Service.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -189,6 +195,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				27BB5F77297A53EF003000CD /* Service.swift in Sources */,
+				27BB5F79297A5A03003000CD /* PeopleViewModel.swift in Sources */,
 				27BB5F5D297A475C003000CD /* ViewController.swift in Sources */,
 				27BB5F75297A5274003000CD /* People.swift in Sources */,
 				27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */,
