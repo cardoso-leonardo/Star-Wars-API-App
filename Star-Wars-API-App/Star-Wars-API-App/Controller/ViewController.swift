@@ -8,24 +8,30 @@
 import UIKit
 
 class ViewController: UIViewController {
-    
-    @IBOutlet weak var table: UITableView!
+ 
+    let table = UITableView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupSubviews()
+        setupTableViewConstraints()
         table.delegate = self
         table.dataSource = self
-        setupTableViewConstraints()
+        
     }
     
-    func setupTableViewConstraints() {
+    private func setupSubviews() {
+        view.addSubview(table)
+    }
+    
+    private func setupTableViewConstraints() {
         table.translatesAutoresizingMaskIntoConstraints = false
         table.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
         table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
         table.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         table.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
-
+    
 }
 
 extension ViewController: UITableViewDataSource, UITableViewDelegate {
@@ -34,10 +40,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "cell")!
-        return cell
+        return UITableViewCell()
     }
-    
-    
+
 }
 

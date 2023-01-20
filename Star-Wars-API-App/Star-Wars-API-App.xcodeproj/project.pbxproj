@@ -16,6 +16,7 @@
 		27BB5F75297A5274003000CD /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F74297A5274003000CD /* People.swift */; };
 		27BB5F77297A53EF003000CD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F76297A53EF003000CD /* Service.swift */; };
 		27BB5F79297A5A03003000CD /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F78297A5A03003000CD /* PeopleViewModel.swift */; };
+		27BB5F7B297A61FE003000CD /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F7A297A61FE003000CD /* PeopleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		27BB5F74297A5274003000CD /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
 		27BB5F76297A53EF003000CD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		27BB5F78297A5A03003000CD /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
+		27BB5F7A297A61FE003000CD /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		27BB5F6E297A4895003000CD /* View */ = {
 			isa = PBXGroup;
 			children = (
+				27BB5F7A297A61FE003000CD /* PeopleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -200,6 +203,7 @@
 				27BB5F5D297A475C003000CD /* ViewController.swift in Sources */,
 				27BB5F75297A5274003000CD /* People.swift in Sources */,
 				27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */,
+				27BB5F7B297A61FE003000CD /* PeopleCell.swift in Sources */,
 				27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
