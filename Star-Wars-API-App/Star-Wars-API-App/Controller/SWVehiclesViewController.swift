@@ -1,5 +1,5 @@
 //
-//  SWTabBarController.swift
+//  SWVehiclesViewController.swift
 //  Star-Wars-API-App
 //
 //  Created by Leonardo Cardoso on 24/01/23.
@@ -7,11 +7,11 @@
 
 import UIKit
 
-class SWTabBarController: UITabBarController {
+class SWVehiclesViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        view.backgroundColor = .systemBackground
         // Do any additional setup after loading the view.
     }
     

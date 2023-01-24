@@ -14,6 +14,7 @@ class SWPeopleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         setupSubviews()
         setupTableViewConstraints()
         table.delegate = self
