@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SWPeopleViewController: UIViewController {
  
     private let table = UITableView()
     private var peopleViewModels = [SWPeopleViewModel]()
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension SWPeopleViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return peopleViewModels.count
     }

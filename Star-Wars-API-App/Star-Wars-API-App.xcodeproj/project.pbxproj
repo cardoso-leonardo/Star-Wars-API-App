@@ -10,7 +10,7 @@
 		274415A829805FCF00D67744 /* SWTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415A729805FCF00D67744 /* SWTabBarController.swift */; };
 		27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F58297A475C003000CD /* AppDelegate.swift */; };
 		27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5A297A475C003000CD /* SceneDelegate.swift */; };
-		27BB5F5D297A475C003000CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5C297A475C003000CD /* ViewController.swift */; };
+		27BB5F5D297A475C003000CD /* SWPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5C297A475C003000CD /* SWPeopleViewController.swift */; };
 		27BB5F62297A475D003000CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F61297A475D003000CD /* Assets.xcassets */; };
 		27BB5F65297A475D003000CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F63297A475D003000CD /* LaunchScreen.storyboard */; };
 		27BB5F75297A5274003000CD /* SWPeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F74297A5274003000CD /* SWPeople.swift */; };
@@ -24,7 +24,7 @@
 		27BB5F55297A475C003000CD /* Star-Wars-API-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star-Wars-API-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BB5F58297A475C003000CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BB5F5A297A475C003000CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		27BB5F5C297A475C003000CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
+		27BB5F5C297A475C003000CD /* SWPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPeopleViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		27BB5F61297A475D003000CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27BB5F64297A475D003000CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27BB5F66297A475D003000CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,7 +102,7 @@
 		27BB5F71297A48AA003000CD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				27BB5F5C297A475C003000CD /* ViewController.swift */,
+				27BB5F5C297A475C003000CD /* SWPeopleViewController.swift */,
 				274415A729805FCF00D67744 /* SWTabBarController.swift */,
 			);
 			path = Controller;
@@ -199,7 +199,7 @@
 			files = (
 				27BB5F77297A53EF003000CD /* SWService.swift in Sources */,
 				27BB5F79297A5A03003000CD /* SWPeopleViewModel.swift in Sources */,
-				27BB5F5D297A475C003000CD /* ViewController.swift in Sources */,
+				27BB5F5D297A475C003000CD /* SWPeopleViewController.swift in Sources */,
 				27BB5F75297A5274003000CD /* SWPeople.swift in Sources */,
 				27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */,
 				274415A829805FCF00D67744 /* SWTabBarController.swift in Sources */,
