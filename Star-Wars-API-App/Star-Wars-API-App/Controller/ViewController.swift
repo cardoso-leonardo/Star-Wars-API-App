@@ -10,7 +10,7 @@ import UIKit
 class ViewController: UIViewController {
  
     private let table = UITableView()
-    private var peopleViewModels = [PeopleViewModel]()
+    private var peopleViewModels = [SWPeopleViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,10 +18,10 @@ class ViewController: UIViewController {
         setupTableViewConstraints()
         table.delegate = self
         table.dataSource = self
-        table.register(PeopleCell.self, forCellReuseIdentifier: "cell")
+        table.register(SWPeopleCell.self, forCellReuseIdentifier: "cell")
         
-        Service.shared.fetchPeopleData { people in
-            self.peopleViewModels = people.map({return PeopleViewModel(people: $0)})
+        SWService.shared.fetchPeopleData { people in
+            self.peopleViewModels = people.map({return SWPeopleViewModel(people: $0)})
             DispatchQueue.main.async {
                 self.table.reloadData()
             }
@@ -48,7 +48,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "cell") as! PeopleCell
+        let cell = table.dequeueReusableCell(withIdentifier: "cell") as! SWPeopleCell
         cell.peopleViewModel = peopleViewModels[indexPath.row]
         return cell
     }

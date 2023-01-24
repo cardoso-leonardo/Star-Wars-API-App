@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PeopleViewModel {
+struct SWPeopleViewModel {
     
     var name: String
     var birthYear: String
