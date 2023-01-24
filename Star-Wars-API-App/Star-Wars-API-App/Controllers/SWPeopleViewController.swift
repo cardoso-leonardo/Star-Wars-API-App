@@ -14,6 +14,7 @@ class SWPeopleViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Characters"
         view.backgroundColor = .systemBackground
         setupSubviews()
         setupTableViewConstraints()
