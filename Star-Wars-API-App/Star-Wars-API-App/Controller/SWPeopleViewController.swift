@@ -7,21 +7,22 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SWPeopleViewController: UIViewController {
  
     private let table = UITableView()
-    private var peopleViewModels = [PeopleViewModel]()
+    private var peopleViewModels = [SWPeopleViewModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .systemBackground
         setupSubviews()
         setupTableViewConstraints()
         table.delegate = self
         table.dataSource = self
-        table.register(PeopleCell.self, forCellReuseIdentifier: "cell")
+        table.register(SWPeopleCell.self, forCellReuseIdentifier: "cell")
         
-        Service.shared.fetchPeopleData { people in
-            self.peopleViewModels = people.map({return PeopleViewModel(people: $0)})
+        SWService.shared.fetchPeopleData { people in
+            self.peopleViewModels = people.map({return SWPeopleViewModel(people: $0)})
             DispatchQueue.main.async {
                 self.table.reloadData()
             }
@@ -42,13 +43,13 @@ class ViewController: UIViewController {
     
 }
 
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
+extension SWPeopleViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return peopleViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "cell") as! PeopleCell
+        let cell = table.dequeueReusableCell(withIdentifier: "cell") as! SWPeopleCell
         cell.peopleViewModel = peopleViewModels[indexPath.row]
         return cell
     }

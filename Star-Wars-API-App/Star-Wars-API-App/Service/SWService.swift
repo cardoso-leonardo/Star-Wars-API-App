@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class Service{
+final class SWService{
     
-    static var shared = Service()
+    static var shared = SWService()
         
     func fetchPeopleData(onCompletion: @escaping ([People]) -> ()) {
         let url = "https://swapi.dev/api/people"
@@ -22,7 +22,7 @@ final class Service{
                 
             }
             
-            guard let newData = try? JSONDecoder().decode(PeopleList.self, from: data) else {
+            guard let newData = try? JSONDecoder().decode(SWPeopleList.self, from: data) else {
                 print("Could not parse data")
                 return
             }

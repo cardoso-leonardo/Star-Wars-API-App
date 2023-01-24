@@ -7,31 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		274415A829805FCF00D67744 /* SWTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415A729805FCF00D67744 /* SWTabBarController.swift */; };
+		274415AB298064B100D67744 /* SWVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415AA298064B100D67744 /* SWVehiclesViewController.swift */; };
+		274415AD298064CD00D67744 /* SWSpaceshipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415AC298064CD00D67744 /* SWSpaceshipsViewController.swift */; };
 		27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F58297A475C003000CD /* AppDelegate.swift */; };
 		27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5A297A475C003000CD /* SceneDelegate.swift */; };
-		27BB5F5D297A475C003000CD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5C297A475C003000CD /* ViewController.swift */; };
-		27BB5F60297A475C003000CD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F5E297A475C003000CD /* Main.storyboard */; };
+		27BB5F5D297A475C003000CD /* SWPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5C297A475C003000CD /* SWPeopleViewController.swift */; };
 		27BB5F62297A475D003000CD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F61297A475D003000CD /* Assets.xcassets */; };
 		27BB5F65297A475D003000CD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27BB5F63297A475D003000CD /* LaunchScreen.storyboard */; };
-		27BB5F75297A5274003000CD /* People.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F74297A5274003000CD /* People.swift */; };
-		27BB5F77297A53EF003000CD /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F76297A53EF003000CD /* Service.swift */; };
-		27BB5F79297A5A03003000CD /* PeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F78297A5A03003000CD /* PeopleViewModel.swift */; };
-		27BB5F7B297A61FE003000CD /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F7A297A61FE003000CD /* PeopleCell.swift */; };
+		27BB5F75297A5274003000CD /* SWPeople.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F74297A5274003000CD /* SWPeople.swift */; };
+		27BB5F77297A53EF003000CD /* SWService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F76297A53EF003000CD /* SWService.swift */; };
+		27BB5F79297A5A03003000CD /* SWPeopleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F78297A5A03003000CD /* SWPeopleViewModel.swift */; };
+		27BB5F7B297A61FE003000CD /* SWPeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F7A297A61FE003000CD /* SWPeopleCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		274415A729805FCF00D67744 /* SWTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTabBarController.swift; sourceTree = "<group>"; };
+		274415AA298064B100D67744 /* SWVehiclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWVehiclesViewController.swift; sourceTree = "<group>"; };
+		274415AC298064CD00D67744 /* SWSpaceshipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSpaceshipsViewController.swift; sourceTree = "<group>"; };
 		27BB5F55297A475C003000CD /* Star-Wars-API-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star-Wars-API-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BB5F58297A475C003000CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BB5F5A297A475C003000CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		27BB5F5C297A475C003000CD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
-		27BB5F5F297A475C003000CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		27BB5F5C297A475C003000CD /* SWPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPeopleViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
 		27BB5F61297A475D003000CD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		27BB5F64297A475D003000CD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		27BB5F66297A475D003000CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		27BB5F74297A5274003000CD /* People.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = People.swift; sourceTree = "<group>"; };
-		27BB5F76297A53EF003000CD /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		27BB5F78297A5A03003000CD /* PeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleViewModel.swift; sourceTree = "<group>"; };
-		27BB5F7A297A61FE003000CD /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
+		27BB5F74297A5274003000CD /* SWPeople.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPeople.swift; sourceTree = "<group>"; };
+		27BB5F76297A53EF003000CD /* SWService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWService.swift; sourceTree = "<group>"; };
+		27BB5F78297A5A03003000CD /* SWPeopleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPeopleViewModel.swift; sourceTree = "<group>"; };
+		27BB5F7A297A61FE003000CD /* SWPeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPeopleCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +49,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		274415A92980645D00D67744 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				274415A729805FCF00D67744 /* SWTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		27BB5F4C297A475C003000CD = {
 			isa = PBXGroup;
 			children = (
@@ -64,17 +76,13 @@
 		27BB5F57297A475C003000CD /* Star-Wars-API-App */ = {
 			isa = PBXGroup;
 			children = (
+				27BB5F66297A475D003000CD /* Info.plist */,
+				27BB5F72297A48B9003000CD /* Resources */,
 				27BB5F73297A48E6003000CD /* Service */,
 				27BB5F6C297A4881003000CD /* Model */,
 				27BB5F6E297A4895003000CD /* View */,
 				27BB5F70297A48A3003000CD /* ViewModel */,
 				27BB5F71297A48AA003000CD /* Controller */,
-				27BB5F72297A48B9003000CD /* Utilities */,
-				27BB5F58297A475C003000CD /* AppDelegate.swift */,
-				27BB5F5A297A475C003000CD /* SceneDelegate.swift */,
-				27BB5F5E297A475C003000CD /* Main.storyboard */,
-				27BB5F63297A475D003000CD /* LaunchScreen.storyboard */,
-				27BB5F66297A475D003000CD /* Info.plist */,
 			);
 			path = "Star-Wars-API-App";
 			sourceTree = "<group>";
@@ -82,7 +90,7 @@
 		27BB5F6C297A4881003000CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				27BB5F74297A5274003000CD /* People.swift */,
+				27BB5F74297A5274003000CD /* SWPeople.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -90,7 +98,7 @@
 		27BB5F6E297A4895003000CD /* View */ = {
 			isa = PBXGroup;
 			children = (
-				27BB5F7A297A61FE003000CD /* PeopleCell.swift */,
+				27BB5F7A297A61FE003000CD /* SWPeopleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -98,7 +106,7 @@
 		27BB5F70297A48A3003000CD /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				27BB5F78297A5A03003000CD /* PeopleViewModel.swift */,
+				27BB5F78297A5A03003000CD /* SWPeopleViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -106,23 +114,29 @@
 		27BB5F71297A48AA003000CD /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				27BB5F5C297A475C003000CD /* ViewController.swift */,
+				274415A92980645D00D67744 /* TabBar */,
+				27BB5F5C297A475C003000CD /* SWPeopleViewController.swift */,
+				274415AA298064B100D67744 /* SWVehiclesViewController.swift */,
+				274415AC298064CD00D67744 /* SWSpaceshipsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		27BB5F72297A48B9003000CD /* Utilities */ = {
+		27BB5F72297A48B9003000CD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				27BB5F61297A475D003000CD /* Assets.xcassets */,
+				27BB5F58297A475C003000CD /* AppDelegate.swift */,
+				27BB5F5A297A475C003000CD /* SceneDelegate.swift */,
+				27BB5F63297A475D003000CD /* LaunchScreen.storyboard */,
 			);
-			path = Utilities;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		27BB5F73297A48E6003000CD /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				27BB5F76297A53EF003000CD /* Service.swift */,
+				27BB5F76297A53EF003000CD /* SWService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -187,7 +201,6 @@
 			files = (
 				27BB5F65297A475D003000CD /* LaunchScreen.storyboard in Resources */,
 				27BB5F62297A475D003000CD /* Assets.xcassets in Resources */,
-				27BB5F60297A475C003000CD /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,12 +211,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27BB5F77297A53EF003000CD /* Service.swift in Sources */,
-				27BB5F79297A5A03003000CD /* PeopleViewModel.swift in Sources */,
-				27BB5F5D297A475C003000CD /* ViewController.swift in Sources */,
-				27BB5F75297A5274003000CD /* People.swift in Sources */,
+				274415AD298064CD00D67744 /* SWSpaceshipsViewController.swift in Sources */,
+				27BB5F77297A53EF003000CD /* SWService.swift in Sources */,
+				27BB5F79297A5A03003000CD /* SWPeopleViewModel.swift in Sources */,
+				27BB5F5D297A475C003000CD /* SWPeopleViewController.swift in Sources */,
+				27BB5F75297A5274003000CD /* SWPeople.swift in Sources */,
+				274415AB298064B100D67744 /* SWVehiclesViewController.swift in Sources */,
 				27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */,
-				27BB5F7B297A61FE003000CD /* PeopleCell.swift in Sources */,
+				274415A829805FCF00D67744 /* SWTabBarController.swift in Sources */,
+				27BB5F7B297A61FE003000CD /* SWPeopleCell.swift in Sources */,
 				27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -211,14 +227,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		27BB5F5E297A475C003000CD /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				27BB5F5F297A475C003000CD /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		27BB5F63297A475D003000CD /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -356,7 +364,6 @@
 				INFOPLIST_FILE = "Star-Wars-API-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -384,7 +391,6 @@
 				INFOPLIST_FILE = "Star-Wars-API-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

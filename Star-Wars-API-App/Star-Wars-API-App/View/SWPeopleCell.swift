@@ -7,10 +7,10 @@
 
 import UIKit
 
-class PeopleCell: UITableViewCell {
+class SWPeopleCell: UITableViewCell {
     
     
-    var peopleViewModel: PeopleViewModel! {
+    var peopleViewModel: SWPeopleViewModel! {
         didSet {
             self.textLabel?.text = peopleViewModel.name
             self.detailTextLabel?.text = peopleViewModel.birthYear
