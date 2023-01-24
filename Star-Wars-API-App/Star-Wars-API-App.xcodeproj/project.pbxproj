@@ -11,6 +11,8 @@
 		274415AB298064B100D67744 /* SWVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415AA298064B100D67744 /* SWVehiclesViewController.swift */; };
 		274415AD298064CD00D67744 /* SWSpaceshipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415AC298064CD00D67744 /* SWSpaceshipsViewController.swift */; };
 		274415AF2980878400D67744 /* SWSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415AE2980878400D67744 /* SWSettingsViewController.swift */; };
+		274415B129808A2B00D67744 /* SWStarships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415B029808A2B00D67744 /* SWStarships.swift */; };
+		274415B329808A7300D67744 /* SWVehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415B229808A7300D67744 /* SWVehicles.swift */; };
 		27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F58297A475C003000CD /* AppDelegate.swift */; };
 		27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5A297A475C003000CD /* SceneDelegate.swift */; };
 		27BB5F5D297A475C003000CD /* SWPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5C297A475C003000CD /* SWPeopleViewController.swift */; };
@@ -27,6 +29,8 @@
 		274415AA298064B100D67744 /* SWVehiclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWVehiclesViewController.swift; sourceTree = "<group>"; };
 		274415AC298064CD00D67744 /* SWSpaceshipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSpaceshipsViewController.swift; sourceTree = "<group>"; };
 		274415AE2980878400D67744 /* SWSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSettingsViewController.swift; sourceTree = "<group>"; };
+		274415B029808A2B00D67744 /* SWStarships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWStarships.swift; sourceTree = "<group>"; };
+		274415B229808A7300D67744 /* SWVehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWVehicles.swift; sourceTree = "<group>"; };
 		27BB5F55297A475C003000CD /* Star-Wars-API-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star-Wars-API-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BB5F58297A475C003000CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BB5F5A297A475C003000CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -93,6 +97,8 @@
 			isa = PBXGroup;
 			children = (
 				27BB5F74297A5274003000CD /* SWPeople.swift */,
+				274415B029808A2B00D67744 /* SWStarships.swift */,
+				274415B229808A7300D67744 /* SWVehicles.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -221,10 +227,12 @@
 				27BB5F75297A5274003000CD /* SWPeople.swift in Sources */,
 				274415AF2980878400D67744 /* SWSettingsViewController.swift in Sources */,
 				274415AB298064B100D67744 /* SWVehiclesViewController.swift in Sources */,
+				274415B129808A2B00D67744 /* SWStarships.swift in Sources */,
 				27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */,
 				274415A829805FCF00D67744 /* SWTabBarController.swift in Sources */,
 				27BB5F7B297A61FE003000CD /* SWPeopleCell.swift in Sources */,
 				27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */,
+				274415B329808A7300D67744 /* SWVehicles.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
