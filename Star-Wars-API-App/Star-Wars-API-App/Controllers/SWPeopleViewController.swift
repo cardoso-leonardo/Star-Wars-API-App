@@ -18,9 +18,7 @@ class SWPeopleViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupSubviews()
         setupTableViewConstraints()
-        table.delegate = self
-        table.dataSource = self
-        table.register(SWPeopleCell.self, forCellReuseIdentifier: "cell")
+        setupTable()
         
         SWService.shared.fetchPeopleData { people in
             self.peopleViewModels = people.map({return SWPeopleViewModel(people: $0)})
@@ -40,6 +38,12 @@ class SWPeopleViewController: UIViewController {
         table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
         table.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
         table.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    private func setupTable() {
+        table.delegate = self
+        table.dataSource = self
+        table.register(SWStarshipCell.self, forCellReuseIdentifier: "cell")
     }
     
 }

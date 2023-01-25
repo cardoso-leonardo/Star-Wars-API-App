@@ -18,9 +18,7 @@ class SWSpaceshipsViewController: UIViewController {
         view.backgroundColor = .systemBackground
         setupSubviews()
         setupTableViewConstraints()
-        table.delegate = self
-        table.dataSource = self
-        table.register(SWPeopleCell.self, forCellReuseIdentifier: "cell")
+        setupTable()
         
         SWService.shared.fetchStarshipData { starship in
             self.starshipViewModels = starship.map({return SWStarshipViewModel(starship: $0)})
@@ -42,16 +40,22 @@ class SWSpaceshipsViewController: UIViewController {
         table.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
     }
     
+    private func setupTable() {
+        table.delegate = self
+        table.dataSource = self
+        table.register(SWStarshipCell.self, forCellReuseIdentifier: "cell")
+    }
+    
 }
 
 extension SWSpaceshipsViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return peopleViewModels.count
+        return starshipViewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = table.dequeueReusableCell(withIdentifier: "cell") as! SWPeopleCell
-        cell.peopleViewModel = starshipViewModels[indexPath.row]
+        let cell = table.dequeueReusableCell(withIdentifier: "cell") as! SWStarshipCell
+        cell.starshipViewModel = starshipViewModels[indexPath.row]
         return cell
     }
 }

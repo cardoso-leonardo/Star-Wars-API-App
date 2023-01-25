@@ -9,22 +9,53 @@ import UIKit
 
 class SWVehiclesViewController: UIViewController {
 
+    private let table = UITableView()
+    private var vehicleViewModels = [SWVehicleViewModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Vehicles"
+        title = "Vehicle"
         view.backgroundColor = .systemBackground
-        // Do any additional setup after loading the view.
+        setupSubviews()
+        setupTableViewConstraints()
+        setupTable()
+        
+        SWService.shared.fetchVehicleData { vehicle in
+            self.vehicleViewModels = vehicle.map({return SWVehicleViewModel(vehicle: $0)})
+            DispatchQueue.main.async {
+                self.table.reloadData()
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupSubviews() {
+        view.addSubview(table)
     }
-    */
+    
+    private func setupTableViewConstraints() {
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+        table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
+        table.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        table.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+    private func setupTable() {
+        table.delegate = self
+        table.dataSource = self
+        table.register(SWStarshipCell.self, forCellReuseIdentifier: "cell")
+    }
+    
+}
 
+extension SWVehiclesViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return vehicleViewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = table.dequeueReusableCell(withIdentifier: "cell") as! SWVehicleCell
+        cell.vehicleViewModel = vehicleViewModels[indexPath.row]
+        return cell
+    }
 }
