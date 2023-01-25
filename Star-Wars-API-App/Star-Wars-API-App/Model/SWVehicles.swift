@@ -7,7 +7,28 @@
 
 import Foundation
 
+struct VehicleList: Codable {
+    let count: Int
+    let next: String?
+    let previous: String?
+    let results: [Vehicle]
+}
 
+struct Vehicle: Codable {
+    let name: String
+    let model: String
+    let manufacturer: String
+    let cost_in_credits: String
+    let length: String
+    let max_atmosphering_speed: String
+    let crew: String
+    let passengers: String
+    let cargo_capacity: String
+    let consumables: String
+    let vehicle_class: String
+    let pilots: [People]?
+    let films: [String]?
+}
 
 //{
 //    "count": 39,
