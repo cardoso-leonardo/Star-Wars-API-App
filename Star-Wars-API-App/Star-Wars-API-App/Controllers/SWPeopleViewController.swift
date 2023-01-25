@@ -43,7 +43,7 @@ class SWPeopleViewController: UIViewController {
     private func setupTable() {
         table.delegate = self
         table.dataSource = self
-        table.register(SWStarshipCell.self, forCellReuseIdentifier: "cell")
+        table.register(SWPeopleCell.self, forCellReuseIdentifier: "cell")
     }
     
 }
