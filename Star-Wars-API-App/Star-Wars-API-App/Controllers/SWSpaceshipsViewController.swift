@@ -9,22 +9,49 @@ import UIKit
 
 class SWSpaceshipsViewController: UIViewController {
 
+    private let table = UITableView()
+    private var starshipViewModels = [SWStarshipViewModel]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Spaceships"
         view.backgroundColor = .systemBackground
-        // Do any additional setup after loading the view.
+        setupSubviews()
+        setupTableViewConstraints()
+        table.delegate = self
+        table.dataSource = self
+        table.register(SWPeopleCell.self, forCellReuseIdentifier: "cell")
+        
+        SWService.shared.fetchStarshipData { starship in
+            self.starshipViewModels = starship.map({return SWStarshipViewModel(starship: $0)})
+            DispatchQueue.main.async {
+                self.table.reloadData()
+            }
+        }
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupSubviews() {
+        view.addSubview(table)
     }
-    */
+    
+    private func setupTableViewConstraints() {
+        table.translatesAutoresizingMaskIntoConstraints = false
+        table.topAnchor.constraint(equalTo: view.layoutMarginsGuide.topAnchor).isActive = true
+        table.bottomAnchor.constraint(equalTo: view.layoutMarginsGuide.bottomAnchor).isActive = true
+        table.leadingAnchor.constraint(equalTo: view.leadingAnchor).isActive = true
+        table.trailingAnchor.constraint(equalTo: view.trailingAnchor).isActive = true
+    }
+    
+}
 
+extension SWSpaceshipsViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return peopleViewModels.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = table.dequeueReusableCell(withIdentifier: "cell") as! SWPeopleCell
+        cell.peopleViewModel = starshipViewModels[indexPath.row]
+        return cell
+    }
 }

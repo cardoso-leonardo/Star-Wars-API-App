@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct SWPeopleList: Codable {
+struct PeopleList: Codable {
     let count: Int
     let next: String?
     let previous: String?
