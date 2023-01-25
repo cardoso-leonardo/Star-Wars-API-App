@@ -26,8 +26,8 @@ struct Vehicle: Codable {
     let cargo_capacity: String
     let consumables: String
     let vehicle_class: String
-    let pilots: [People]?
-    let films: [String]?
+//    let pilots: [People]?
+//    let films: [String]?
 }
 
 //{

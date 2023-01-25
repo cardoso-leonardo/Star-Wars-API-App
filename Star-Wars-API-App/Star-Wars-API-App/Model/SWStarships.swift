@@ -28,8 +28,8 @@ struct Starship: Codable {
     let consumables: String
     let hyperdrive_rating: String
     let starship_class: String
-    let pilots: [People]?
-    let films: [String]?
+//    let pilots: [People]?
+//    let films: [String]?
 }
 
 
