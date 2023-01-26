@@ -27,9 +27,13 @@ struct Starship: Codable {
     let cargo_capacity: String
     let consumables: String
     let hyperdrive_rating: String
+    let MGLT: String
     let starship_class: String
-//    let pilots: [People]?
-//    let films: [String]?
+    let pilots: [String]
+    let films: [String]
+    let url: String
+    let created: String
+    let edited: String
 }
 
 

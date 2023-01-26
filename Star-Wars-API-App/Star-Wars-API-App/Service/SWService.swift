@@ -11,7 +11,7 @@ final class SWService{
     
     static var shared = SWService()
         
-    func fetchPeopleData(onCompletion: @escaping ([People]) -> ()) {
+    func fetchPeopleData(onCompletion: @escaping ([Person]) -> ()) {
         let url = "https://swapi.dev/api/people"
         
         URLSession.shared.dataTask(with: URL(string: url)!) { data, _, err in
