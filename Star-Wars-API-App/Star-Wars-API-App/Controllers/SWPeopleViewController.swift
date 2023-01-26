@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SWPeopleViewController: UIViewController {
+final class SWPeopleViewController: UIViewController {
  
     private let table = UITableView()
     private var peopleViewModels = [SWPeopleViewModel]()

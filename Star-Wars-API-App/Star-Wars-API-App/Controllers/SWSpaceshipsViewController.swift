@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SWSpaceshipsViewController: UIViewController {
+final class SWSpaceshipsViewController: UIViewController {
 
     private let table = UITableView()
     private var starshipViewModels = [SWStarshipViewModel]()

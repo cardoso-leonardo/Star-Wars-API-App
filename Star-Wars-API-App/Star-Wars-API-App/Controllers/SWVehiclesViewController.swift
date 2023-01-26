@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SWVehiclesViewController: UIViewController {
+final class SWVehiclesViewController: UIViewController {
 
     private let table = UITableView()
     private var vehicleViewModels = [SWVehicleViewModel]()

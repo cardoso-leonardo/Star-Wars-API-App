@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SWSettingsViewController: UIViewController {
+final class SWSettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
