@@ -1,5 +1,5 @@
 //
-//  SWVehiclesViewController.swift
+//  SWSettingsViewController.swift
 //  Star-Wars-API-App
 //
 //  Created by Leonardo Cardoso on 24/01/23.
@@ -7,11 +7,12 @@
 
 import UIKit
 
-class SWVehiclesViewController: UIViewController {
+class SWSettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
+        title = "Settings"
         // Do any additional setup after loading the view.
     }
     

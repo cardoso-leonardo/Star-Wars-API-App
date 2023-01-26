@@ -12,7 +12,7 @@ struct SWPeopleViewModel {
     var name: String
     var birthYear: String
     
-    init(people: People!) {
+    init(people: Person!) {
         self.name = people.name
         self.birthYear = people.birth_year
     }

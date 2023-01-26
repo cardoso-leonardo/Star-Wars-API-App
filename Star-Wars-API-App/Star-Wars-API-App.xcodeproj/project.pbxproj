@@ -10,6 +10,13 @@
 		274415A829805FCF00D67744 /* SWTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415A729805FCF00D67744 /* SWTabBarController.swift */; };
 		274415AB298064B100D67744 /* SWVehiclesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415AA298064B100D67744 /* SWVehiclesViewController.swift */; };
 		274415AD298064CD00D67744 /* SWSpaceshipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415AC298064CD00D67744 /* SWSpaceshipsViewController.swift */; };
+		274415AF2980878400D67744 /* SWSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415AE2980878400D67744 /* SWSettingsViewController.swift */; };
+		274415B129808A2B00D67744 /* SWStarships.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415B029808A2B00D67744 /* SWStarships.swift */; };
+		274415B329808A7300D67744 /* SWVehicles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 274415B229808A7300D67744 /* SWVehicles.swift */; };
+		278A26B029819E3000D80A97 /* SWVehicleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A26AF29819E3000D80A97 /* SWVehicleViewModel.swift */; };
+		278A26B229819E8F00D80A97 /* SWStarshipViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A26B129819E8F00D80A97 /* SWStarshipViewModel.swift */; };
+		278A26B429819F9800D80A97 /* SWStarshipCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A26B329819F9800D80A97 /* SWStarshipCell.swift */; };
+		278A26B629819FCA00D80A97 /* SWVehicleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A26B529819FCA00D80A97 /* SWVehicleCell.swift */; };
 		27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F58297A475C003000CD /* AppDelegate.swift */; };
 		27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5A297A475C003000CD /* SceneDelegate.swift */; };
 		27BB5F5D297A475C003000CD /* SWPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5C297A475C003000CD /* SWPeopleViewController.swift */; };
@@ -25,6 +32,13 @@
 		274415A729805FCF00D67744 /* SWTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWTabBarController.swift; sourceTree = "<group>"; };
 		274415AA298064B100D67744 /* SWVehiclesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWVehiclesViewController.swift; sourceTree = "<group>"; };
 		274415AC298064CD00D67744 /* SWSpaceshipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSpaceshipsViewController.swift; sourceTree = "<group>"; };
+		274415AE2980878400D67744 /* SWSettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWSettingsViewController.swift; sourceTree = "<group>"; };
+		274415B029808A2B00D67744 /* SWStarships.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWStarships.swift; sourceTree = "<group>"; };
+		274415B229808A7300D67744 /* SWVehicles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWVehicles.swift; sourceTree = "<group>"; };
+		278A26AF29819E3000D80A97 /* SWVehicleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWVehicleViewModel.swift; sourceTree = "<group>"; };
+		278A26B129819E8F00D80A97 /* SWStarshipViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWStarshipViewModel.swift; sourceTree = "<group>"; };
+		278A26B329819F9800D80A97 /* SWStarshipCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWStarshipCell.swift; sourceTree = "<group>"; };
+		278A26B529819FCA00D80A97 /* SWVehicleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWVehicleCell.swift; sourceTree = "<group>"; };
 		27BB5F55297A475C003000CD /* Star-Wars-API-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star-Wars-API-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BB5F58297A475C003000CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BB5F5A297A475C003000CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,7 +96,7 @@
 				27BB5F6C297A4881003000CD /* Model */,
 				27BB5F6E297A4895003000CD /* View */,
 				27BB5F70297A48A3003000CD /* ViewModel */,
-				27BB5F71297A48AA003000CD /* Controller */,
+				27BB5F71297A48AA003000CD /* Controllers */,
 			);
 			path = "Star-Wars-API-App";
 			sourceTree = "<group>";
@@ -91,6 +105,8 @@
 			isa = PBXGroup;
 			children = (
 				27BB5F74297A5274003000CD /* SWPeople.swift */,
+				274415B029808A2B00D67744 /* SWStarships.swift */,
+				274415B229808A7300D67744 /* SWVehicles.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -99,6 +115,8 @@
 			isa = PBXGroup;
 			children = (
 				27BB5F7A297A61FE003000CD /* SWPeopleCell.swift */,
+				278A26B329819F9800D80A97 /* SWStarshipCell.swift */,
+				278A26B529819FCA00D80A97 /* SWVehicleCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -107,19 +125,22 @@
 			isa = PBXGroup;
 			children = (
 				27BB5F78297A5A03003000CD /* SWPeopleViewModel.swift */,
+				278A26AF29819E3000D80A97 /* SWVehicleViewModel.swift */,
+				278A26B129819E8F00D80A97 /* SWStarshipViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		27BB5F71297A48AA003000CD /* Controller */ = {
+		27BB5F71297A48AA003000CD /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
 				274415A92980645D00D67744 /* TabBar */,
 				27BB5F5C297A475C003000CD /* SWPeopleViewController.swift */,
 				274415AA298064B100D67744 /* SWVehiclesViewController.swift */,
 				274415AC298064CD00D67744 /* SWSpaceshipsViewController.swift */,
+				274415AE2980878400D67744 /* SWSettingsViewController.swift */,
 			);
-			path = Controller;
+			path = Controllers;
 			sourceTree = "<group>";
 		};
 		27BB5F72297A48B9003000CD /* Resources */ = {
@@ -213,14 +234,21 @@
 			files = (
 				274415AD298064CD00D67744 /* SWSpaceshipsViewController.swift in Sources */,
 				27BB5F77297A53EF003000CD /* SWService.swift in Sources */,
+				278A26B229819E8F00D80A97 /* SWStarshipViewModel.swift in Sources */,
 				27BB5F79297A5A03003000CD /* SWPeopleViewModel.swift in Sources */,
 				27BB5F5D297A475C003000CD /* SWPeopleViewController.swift in Sources */,
 				27BB5F75297A5274003000CD /* SWPeople.swift in Sources */,
+				274415AF2980878400D67744 /* SWSettingsViewController.swift in Sources */,
+				278A26B429819F9800D80A97 /* SWStarshipCell.swift in Sources */,
 				274415AB298064B100D67744 /* SWVehiclesViewController.swift in Sources */,
+				274415B129808A2B00D67744 /* SWStarships.swift in Sources */,
 				27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */,
+				278A26B029819E3000D80A97 /* SWVehicleViewModel.swift in Sources */,
 				274415A829805FCF00D67744 /* SWTabBarController.swift in Sources */,
 				27BB5F7B297A61FE003000CD /* SWPeopleCell.swift in Sources */,
 				27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */,
+				274415B329808A7300D67744 /* SWVehicles.swift in Sources */,
+				278A26B629819FCA00D80A97 /* SWVehicleCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -1,0 +1,17 @@
+//
+//  SWStarshipViewModel.swift
+//  Star-Wars-API-App
+//
+//  Created by Leonardo Cardoso on 25/01/23.
+//
+
+import Foundation
+
+struct SWStarshipViewModel {
+    
+    let name: String?
+    
+    init(starship: Starship) {
+        self.name = starship.name
+    }
+}
