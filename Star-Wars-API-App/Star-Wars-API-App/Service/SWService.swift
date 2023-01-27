@@ -9,72 +9,51 @@ import Foundation
 
 final class SWService{
     
-    static var shared = SWService()
+    static let shared = SWService()
+    
+    private init() {}
+    
+    enum SWServiceError: Error {
+        case failedToCreateRequest
+        case failedToGetData
+    }
+    
+    
+    func fetch<T: Codable>(_ request: SWRequest, expecting type: T.Type, completion: @escaping (Result<T, Error>) -> Void){
         
-    func fetchPeopleData(onCompletion: @escaping ([Person]) -> ()) {
-        let url = "https://swapi.dev/api/people"
+        guard let urlRequest = self.request(from: request) else {
+            completion(.failure(SWServiceError.failedToCreateRequest))
+            return
+        }
         
-        URLSession.shared.dataTask(with: URL(string: url)!) { data, _, err in
-            
-            guard let data = data else {
-                print("Could not fetch data")
+        let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
+            guard let data = data, error == nil else {
+                completion(.failure(error ?? SWServiceError.failedToGetData))
                 return
-                
             }
             
-            guard let newData = try? JSONDecoder().decode(PeopleList.self, from: data) else {
-                print("Could not parse data")
-                return
+            do {
+                let result = try JSONDecoder().decode(type.self, from: data)
+                completion(.success(result))
+            } catch {
+                completion(.failure(error))
             }
             
-            onCompletion(newData.results)
-            
-        }.resume()
+        }
+        task.resume()
+        
         
     }
     
-    func fetchStarshipData(onCompletion: @escaping ([Starship]) -> ()) {
-        let url = "https://swapi.dev/api/starships"
-        
-        URLSession.shared.dataTask(with: URL(string: url)!) { data, _, err in
-            
-            guard let data = data else {
-                print("Could not fetch data")
-                return
-                
-            }
-            
-            guard let newData = try? JSONDecoder().decode(StarshipList.self, from: data) else {
-                print("Could not parse data")
-                return
-            }
-            
-            onCompletion(newData.results)
-            
-        }.resume()
-        
-    }
     
-    func fetchVehicleData(onCompletion: @escaping ([Vehicle]) -> ()) {
-        let url = "https://swapi.dev/api/vehicles"
-        
-        URLSession.shared.dataTask(with: URL(string: url)!) { data, _, err in
-            
-            guard let data = data else {
-                print("Could not fetch data")
-                return
-                
-            }
-            
-            guard let newData = try? JSONDecoder().decode(VehicleList.self, from: data) else {
-                print("Could not parse data")
-                return
-            }
-            
-            onCompletion(newData.results)
-            
-        }.resume()
-        
+    //MARK: Private
+    
+    private func request(from swRequest: SWRequest) -> URLRequest? {
+        guard let url = swRequest.url else { return nil }
+        var request = URLRequest(url: url)
+        request.httpMethod = swRequest.httpMethod
+        return request
     }
     
 }
+
