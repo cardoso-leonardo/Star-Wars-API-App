@@ -7,10 +7,6 @@
 
 import Foundation
 
-struct SWVehicleViewModel {
-    let name: String?
-    
-    init(vehicle: Vehicle) {
-        self.name = vehicle.name
-    }
+struct VehicleListViewViewModel {
+
 }
