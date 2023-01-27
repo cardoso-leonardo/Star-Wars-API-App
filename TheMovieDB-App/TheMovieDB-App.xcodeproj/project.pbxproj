@@ -18,8 +18,6 @@
 		2781B570298360FF007EED8E /* TMDBPeopleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781B56F298360FF007EED8E /* TMDBPeopleListView.swift */; };
 		2781B57229836BA6007EED8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781B57129836BA6007EED8E /* Extensions.swift */; };
 		2781B574298397EF007EED8E /* TMDBApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781B573298397EF007EED8E /* TMDBApiKey.swift */; };
-		278A26B029819E3000D80A97 /* TMDBMoviesListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A26AF29819E3000D80A97 /* TMDBMoviesListViewViewModel.swift */; };
-		278A26B229819E8F00D80A97 /* TMDBTVShowsListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278A26B129819E8F00D80A97 /* TMDBTVShowsListViewViewModel.swift */; };
 		27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F58297A475C003000CD /* AppDelegate.swift */; };
 		27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5A297A475C003000CD /* SceneDelegate.swift */; };
 		27BB5F5D297A475C003000CD /* TMDBPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5C297A475C003000CD /* TMDBPeopleViewController.swift */; };
@@ -28,6 +26,8 @@
 		27BB5F75297A5274003000CD /* TMDBPopularTVShowList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F74297A5274003000CD /* TMDBPopularTVShowList.swift */; };
 		27BB5F77297A53EF003000CD /* TMDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F76297A53EF003000CD /* TMDBService.swift */; };
 		27BB5F79297A5A03003000CD /* TMDBPeopleListViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F78297A5A03003000CD /* TMDBPeopleListViewViewModel.swift */; };
+		27DDBB11298448D300FCB7E0 /* TMDBPeopleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DDBB10298448D300FCB7E0 /* TMDBPeopleCollectionViewCell.swift */; };
+		27DDBB1329844D4A00FCB7E0 /* TMDBPeopleCollectionViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27DDBB1229844D4A00FCB7E0 /* TMDBPeopleCollectionViewCellViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,8 +42,6 @@
 		2781B56F298360FF007EED8E /* TMDBPeopleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBPeopleListView.swift; sourceTree = "<group>"; };
 		2781B57129836BA6007EED8E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		2781B573298397EF007EED8E /* TMDBApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBApiKey.swift; sourceTree = "<group>"; };
-		278A26AF29819E3000D80A97 /* TMDBMoviesListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMoviesListViewViewModel.swift; sourceTree = "<group>"; };
-		278A26B129819E8F00D80A97 /* TMDBTVShowsListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTVShowsListViewViewModel.swift; sourceTree = "<group>"; };
 		27BB5F55297A475C003000CD /* TheMovieDB-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheMovieDB-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BB5F58297A475C003000CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BB5F5A297A475C003000CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -54,6 +52,8 @@
 		27BB5F74297A5274003000CD /* TMDBPopularTVShowList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBPopularTVShowList.swift; sourceTree = "<group>"; };
 		27BB5F76297A53EF003000CD /* TMDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBService.swift; sourceTree = "<group>"; };
 		27BB5F78297A5A03003000CD /* TMDBPeopleListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBPeopleListViewViewModel.swift; sourceTree = "<group>"; };
+		27DDBB10298448D300FCB7E0 /* TMDBPeopleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBPeopleCollectionViewCell.swift; sourceTree = "<group>"; };
+		27DDBB1229844D4A00FCB7E0 /* TMDBPeopleCollectionViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBPeopleCollectionViewCellViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,8 +98,8 @@
 				27BB5F72297A48B9003000CD /* Resources */,
 				27BB5F73297A48E6003000CD /* Service */,
 				27BB5F6C297A4881003000CD /* Model */,
-				27BB5F6E297A4895003000CD /* View */,
 				27BB5F70297A48A3003000CD /* ViewModel */,
+				27BB5F6E297A4895003000CD /* View */,
 				27BB5F71297A48AA003000CD /* Controllers */,
 			);
 			path = "TheMovieDB-App";
@@ -119,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				2781B56F298360FF007EED8E /* TMDBPeopleListView.swift */,
+				27DDBB10298448D300FCB7E0 /* TMDBPeopleCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -127,8 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				27BB5F78297A5A03003000CD /* TMDBPeopleListViewViewModel.swift */,
-				278A26AF29819E3000D80A97 /* TMDBMoviesListViewViewModel.swift */,
-				278A26B129819E8F00D80A97 /* TMDBTVShowsListViewViewModel.swift */,
+				27DDBB1229844D4A00FCB7E0 /* TMDBPeopleCollectionViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -243,16 +243,16 @@
 				2781B56E29833FB9007EED8E /* TMDBEndpoints.swift in Sources */,
 				2781B574298397EF007EED8E /* TMDBApiKey.swift in Sources */,
 				27BB5F77297A53EF003000CD /* TMDBService.swift in Sources */,
-				278A26B229819E8F00D80A97 /* TMDBTVShowsListViewViewModel.swift in Sources */,
 				27BB5F79297A5A03003000CD /* TMDBPeopleListViewViewModel.swift in Sources */,
+				27DDBB1329844D4A00FCB7E0 /* TMDBPeopleCollectionViewCellViewModel.swift in Sources */,
 				27BB5F5D297A475C003000CD /* TMDBPeopleViewController.swift in Sources */,
 				27BB5F75297A5274003000CD /* TMDBPopularTVShowList.swift in Sources */,
 				274415AF2980878400D67744 /* TMDBSettingsViewController.swift in Sources */,
 				274415AB298064B100D67744 /* TMDBMoviesViewController.swift in Sources */,
 				274415B129808A2B00D67744 /* TMDBPopularPersonList.swift in Sources */,
+				27DDBB11298448D300FCB7E0 /* TMDBPeopleCollectionViewCell.swift in Sources */,
 				27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */,
 				2781B570298360FF007EED8E /* TMDBPeopleListView.swift in Sources */,
-				278A26B029819E3000D80A97 /* TMDBMoviesListViewViewModel.swift in Sources */,
 				274415A829805FCF00D67744 /* TMDBTabBarController.swift in Sources */,
 				27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */,
 				2781B56C29833FA8007EED8E /* TMDBRequest.swift in Sources */,
@@ -401,8 +401,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "TheMovieDB App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -429,8 +429,8 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "TheMovieDB App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
