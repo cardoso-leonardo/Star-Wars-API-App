@@ -25,6 +25,9 @@ DerivedData/
 ## Obj-C/Swift specific
 *.hmap
 
+##Api key
+Star-Wars-API-App/Star-Wars-API-App/Service/TMDBApiKey.swift
+
 ## App packaging
 *.ipa
 *.dSYM.zip
