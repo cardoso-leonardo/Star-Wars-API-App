@@ -17,8 +17,8 @@ class SWTabBarController: UITabBarController {
     private func setupTabBar() {
         
         let peopleVC = SWPeopleViewController()
-        let vehiclesVC = SWVehiclesViewController()
-        let spaceshipsVC = SWSpaceshipsViewController()
+        let vehiclesVC = SWVehicleViewController()
+        let spaceshipsVC = SWStarshipViewController()
         let settingsVC = SWSettingsViewController()
         
         let peopleNav = UINavigationController(rootViewController: peopleVC)
