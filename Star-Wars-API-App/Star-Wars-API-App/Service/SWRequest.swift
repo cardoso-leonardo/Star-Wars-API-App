@@ -10,10 +10,12 @@ import Foundation
 final class SWRequest {
     
     private struct Constants {
-        static let baseUrl = "https://swapi.dev/api"
+        static let baseUrl = "https://api.themoviedb.org/3"
     }
     
-    private let endpoint: SWEndpoints
+    private let endpoint: TMDBEndpoints
+    
+    private let apiKey: String
     
     private let pathComponents: [String]
     
@@ -23,6 +25,7 @@ final class SWRequest {
         var string = Constants.baseUrl
         string += "/"
         string += endpoint.rawValue
+        string += "?api_key=\(apiKey)"
         
         if !pathComponents.isEmpty {
             pathComponents.forEach{(
@@ -31,7 +34,7 @@ final class SWRequest {
         }
         
         if !queryParameters.isEmpty {
-            string += "?"
+            string += "&"
             let argumentString = queryParameters.compactMap({
                 guard let value = $0.value else { return nil }
                 return "\($0.name)=\(value)"
@@ -48,8 +51,9 @@ final class SWRequest {
     
     public let httpMethod = "GET"
     
-    init(endpoint: SWEndpoints, pathComponents: [String] = [], queryParameters: [URLQueryItem] = []) {
+    init(endpoint: TMDBEndpoints, apiKey: String = , pathComponents: [String] = [], queryParameters: [URLQueryItem] = []) {
         self.endpoint = endpoint
+        self.apiKey = apiKey
         self.pathComponents = pathComponents
         self.queryParameters = queryParameters
     }
@@ -58,7 +62,7 @@ final class SWRequest {
 }
 
 extension SWRequest {
-    static let listPeopleRequest = SWRequest(endpoint: .people)
-    static let listVehicleRequest = SWRequest(endpoint: .vehicle)
-    static let listStarshipRequest = SWRequest(endpoint: .starship)
+    static let listPeopleRequest = SWRequest(endpoint: .person)
+    static let listMoviesRequest = SWRequest(endpoint: .movie)
+    static let listTVShowsRequest = SWRequest(endpoint: .tv)
 }
