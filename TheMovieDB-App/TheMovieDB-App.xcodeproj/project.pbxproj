@@ -44,7 +44,7 @@
 		2781B573298397EF007EED8E /* TMDBApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBApiKey.swift; sourceTree = "<group>"; };
 		278A26AF29819E3000D80A97 /* TMDBMoviesListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMoviesListViewViewModel.swift; sourceTree = "<group>"; };
 		278A26B129819E8F00D80A97 /* TMDBTVShowsListViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBTVShowsListViewViewModel.swift; sourceTree = "<group>"; };
-		27BB5F55297A475C003000CD /* Star-Wars-API-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Star-Wars-API-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		27BB5F55297A475C003000CD /* TheMovieDB-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheMovieDB-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BB5F58297A475C003000CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BB5F5A297A475C003000CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		27BB5F5C297A475C003000CD /* TMDBPeopleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBPeopleViewController.swift; sourceTree = "<group>"; tabWidth = 4; };
@@ -78,7 +78,7 @@
 		27BB5F4C297A475C003000CD = {
 			isa = PBXGroup;
 			children = (
-				27BB5F57297A475C003000CD /* Star-Wars-API-App */,
+				27BB5F57297A475C003000CD /* TheMovieDB-App */,
 				27BB5F56297A475C003000CD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -86,12 +86,12 @@
 		27BB5F56297A475C003000CD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				27BB5F55297A475C003000CD /* Star-Wars-API-App.app */,
+				27BB5F55297A475C003000CD /* TheMovieDB-App.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		27BB5F57297A475C003000CD /* Star-Wars-API-App */ = {
+		27BB5F57297A475C003000CD /* TheMovieDB-App */ = {
 			isa = PBXGroup;
 			children = (
 				27BB5F66297A475D003000CD /* Info.plist */,
@@ -102,7 +102,7 @@
 				27BB5F70297A48A3003000CD /* ViewModel */,
 				27BB5F71297A48AA003000CD /* Controllers */,
 			);
-			path = "Star-Wars-API-App";
+			path = "TheMovieDB-App";
 			sourceTree = "<group>";
 		};
 		27BB5F6C297A4881003000CD /* Model */ = {
@@ -171,9 +171,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		27BB5F54297A475C003000CD /* Star-Wars-API-App */ = {
+		27BB5F54297A475C003000CD /* TheMovieDB-App */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 27BB5F69297A475D003000CD /* Build configuration list for PBXNativeTarget "Star-Wars-API-App" */;
+			buildConfigurationList = 27BB5F69297A475D003000CD /* Build configuration list for PBXNativeTarget "TheMovieDB-App" */;
 			buildPhases = (
 				27BB5F51297A475C003000CD /* Sources */,
 				27BB5F52297A475C003000CD /* Frameworks */,
@@ -183,9 +183,9 @@
 			);
 			dependencies = (
 			);
-			name = "Star-Wars-API-App";
+			name = "TheMovieDB-App";
 			productName = "Star-Wars-API-App";
-			productReference = 27BB5F55297A475C003000CD /* Star-Wars-API-App.app */;
+			productReference = 27BB5F55297A475C003000CD /* TheMovieDB-App.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -216,7 +216,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				27BB5F54297A475C003000CD /* Star-Wars-API-App */,
+				27BB5F54297A475C003000CD /* TheMovieDB-App */,
 			);
 		};
 /* End PBXProject section */
@@ -397,7 +397,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Z72SDHS75;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Star-Wars-API-App/Info.plist";
+				INFOPLIST_FILE = "TheMovieDB-App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TheMovieDB App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -407,7 +408,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lcardoso.Star-Wars-API-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lcardoso.TheMovieDB-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -424,7 +425,8 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3Z72SDHS75;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Star-Wars-API-App/Info.plist";
+				INFOPLIST_FILE = "TheMovieDB-App/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "TheMovieDB App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -434,7 +436,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.lcardoso.Star-Wars-API-App";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lcardoso.TheMovieDB-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -454,7 +456,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		27BB5F69297A475D003000CD /* Build configuration list for PBXNativeTarget "Star-Wars-API-App" */ = {
+		27BB5F69297A475D003000CD /* Build configuration list for PBXNativeTarget "TheMovieDB-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				27BB5F6A297A475D003000CD /* Debug */,
