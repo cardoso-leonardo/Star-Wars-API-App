@@ -1,13 +1,13 @@
 //
-//  PeopleListView.swift
-//  Star-Wars-API-App
+//  TMDBPeopleListView.swift
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 26/01/23.
 //
 
 import UIKit
 
-class PeopleListView: UIView {
+class TMDBPeopleListView: UIView {
     
     private let viewModel = TMDBPeopleListViewViewModel()
     

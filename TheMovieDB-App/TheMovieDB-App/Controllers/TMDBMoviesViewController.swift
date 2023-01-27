@@ -1,6 +1,6 @@
 //
 //  TMDBMoviesViewController.swift
-//  Star-Wars-API-App
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 24/01/23.
 //

@@ -1,6 +1,6 @@
 //
 //  TMDBPeopleViewController.swift
-//  Star-Wars-API-App
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 20/01/23.
 //
@@ -9,7 +9,7 @@ import UIKit
 
 final class TMDBPeopleViewController: UIViewController {
     
-    private let peopleListView = PeopleListView()
+    private let peopleListView = TMDBPeopleListView()
     
     override func viewDidLoad() {
         super.viewDidLoad()

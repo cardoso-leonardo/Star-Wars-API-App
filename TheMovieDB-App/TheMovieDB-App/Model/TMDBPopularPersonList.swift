@@ -1,6 +1,6 @@
 //
-//  SWStarships.swift
-//  Star-Wars-API-App
+//  TMDBPopularPersonList.swift
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 24/01/23.
 //

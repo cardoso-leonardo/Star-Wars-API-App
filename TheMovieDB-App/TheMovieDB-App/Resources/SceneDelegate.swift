@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  Star-Wars-API-App
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 20/01/23.
 //
@@ -17,7 +17,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         
-        window.rootViewController = SWTabBarController()
+        window.rootViewController = TMDBTabBarController()
         window.makeKeyAndVisible()
         self.window = window
     

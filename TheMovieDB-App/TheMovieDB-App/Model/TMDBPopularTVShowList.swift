@@ -1,6 +1,6 @@
 //
-//  File.swift
-//  Star-Wars-API-App
+//  TMDBPopularTVShowList.swift
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 20/01/23.
 //

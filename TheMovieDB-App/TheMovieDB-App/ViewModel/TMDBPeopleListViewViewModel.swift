@@ -1,6 +1,6 @@
 //
 //  TMDBPeopleListViewViewModel.swift
-//  Star-Wars-API-App
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 20/01/23.
 //

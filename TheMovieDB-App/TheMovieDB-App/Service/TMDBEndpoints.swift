@@ -1,6 +1,6 @@
 //
-//  SWEndpoints.swift
-//  Star-Wars-API-App
+//  TMDBEndpoints.swift
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 26/01/23.
 //

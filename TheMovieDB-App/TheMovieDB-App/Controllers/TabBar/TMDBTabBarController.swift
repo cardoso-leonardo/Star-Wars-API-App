@@ -1,5 +1,5 @@
 //
-//  SWTabBarController.swift
+//  TMDBTabBarController.swift
 //  Star-Wars-API-App
 //
 //  Created by Leonardo Cardoso on 24/01/23.
@@ -7,7 +7,7 @@
 
 import UIKit
 
-class SWTabBarController: UITabBarController {
+class TMDBTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +19,7 @@ class SWTabBarController: UITabBarController {
         let peopleVC = TMDBPeopleViewController()
         let moviesVC = TMDBMoviesViewController()
         let tvShowsVC = TMDBTVShowsViewController()
-        let settingsVC = SWSettingsViewController()
+        let settingsVC = TMDBSettingsViewController()
         
         let peopleNav = UINavigationController(rootViewController: peopleVC)
         let moviesNav = UINavigationController(rootViewController: moviesVC)

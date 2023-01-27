@@ -1,13 +1,13 @@
 //
-//  SWSettingsViewController.swift
-//  Star-Wars-API-App
+//  TMDBSettingsViewController.swift
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 24/01/23.
 //
 
 import UIKit
 
-final class SWSettingsViewController: UIViewController {
+final class TMDBSettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
