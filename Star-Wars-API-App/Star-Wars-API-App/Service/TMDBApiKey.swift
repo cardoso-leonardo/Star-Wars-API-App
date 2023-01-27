@@ -1,6 +1,6 @@
 //
 //  TMDBApiKey.swift
-//  Star-Wars-API-App
+//  TheMovieDB-App
 //
 //  Created by Leonardo Cardoso on 27/01/23.
 //
