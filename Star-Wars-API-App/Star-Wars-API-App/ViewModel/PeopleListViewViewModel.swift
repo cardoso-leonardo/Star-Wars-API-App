@@ -6,8 +6,9 @@
 //
 
 import Foundation
+import UIKit
 
-struct PeopleListViewViewModel {
+final class PeopleListViewViewModel: NSObject {
     
     func fetchPeople() {
         SWService.shared.fetch(.listPeopleRequest, expecting: PeopleList.self) { result in
@@ -19,4 +20,24 @@ struct PeopleListViewViewModel {
             }
         }
     }
+}
+extension PeopleListViewViewModel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .systemRed
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let bounds = UIScreen.main.bounds
+        let width = (bounds.width - 30) / 2
+        let height = width * 1.5
+        return CGSize(width: width, height: height)
+    }
+    
+    
 }

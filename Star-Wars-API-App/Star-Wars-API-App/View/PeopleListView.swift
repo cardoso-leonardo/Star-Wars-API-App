@@ -8,7 +8,7 @@
 import UIKit
 
 class PeopleListView: UIView {
-
+    
     private let viewModel = PeopleListViewViewModel()
     
     private let collectionView: UICollectionView = {
@@ -17,6 +17,7 @@ class PeopleListView: UIView {
         collectionView.translatesAutoresizingMaskIntoConstraints = false
         collectionView.isHidden = true
         collectionView.alpha = 0
+        collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         return collectionView
     }()
@@ -31,9 +32,13 @@ class PeopleListView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         translatesAutoresizingMaskIntoConstraints = false
-        addSubview(spinner)
+        addSubviews(collectionView, spinner)
         spinner.startAnimating()
+        
+        viewModel.fetchPeople()
+        
         addConstraints()
+        setupCollectionView()
     }
     
     required init?(coder: NSCoder) {
@@ -45,8 +50,26 @@ class PeopleListView: UIView {
             spinner.widthAnchor.constraint(equalToConstant: 100),
             spinner.heightAnchor.constraint(equalToConstant: 100),
             spinner.centerXAnchor.constraint(equalTo: centerXAnchor),
-            spinner.centerYAnchor.constraint(equalTo: centerYAnchor)
+            spinner.centerYAnchor.constraint(equalTo: centerYAnchor),
+            
+            collectionView.topAnchor.constraint(equalTo: topAnchor),
+            collectionView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            collectionView.leadingAnchor.constraint(equalTo: leadingAnchor)
         ])
+    }
+    
+    private func setupCollectionView() {
+        collectionView.delegate = viewModel
+        collectionView.dataSource = viewModel
+        
+        DispatchQueue.main.asyncAfter(deadline: .now()+2,execute: {
+            self.spinner.stopAnimating()
+            UIView.animate(withDuration: 2) {
+                self.collectionView.isHidden = false
+                self.collectionView.alpha = 1
+            }
+        })
     }
     
 }
