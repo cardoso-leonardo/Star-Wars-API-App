@@ -1,6 +1,7 @@
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+.DS_Store
 
 ## User settings
 xcuserdata/
@@ -24,6 +25,9 @@ DerivedData/
 
 ## Obj-C/Swift specific
 *.hmap
+
+##Api key
+TheMovieDB-App/TheMovieDB-App/Service/TMDBApiKey.swift
 
 ## App packaging
 *.ipa
