@@ -19,13 +19,7 @@ final class SWVehiclesViewController: UIViewController {
         setupSubviews()
         setupTableViewConstraints()
         setupTable()
-        
-        SWService.shared.fetchVehicleData { vehicle in
-            self.vehicleViewModels = vehicle.map({return SWVehicleViewModel(vehicle: $0)})
-            DispatchQueue.main.async {
-                self.table.reloadData()
-            }
-        }
+
     }
     
     private func setupSubviews() {

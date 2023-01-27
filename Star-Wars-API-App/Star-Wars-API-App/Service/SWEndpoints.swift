@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum SWEndpoints {
+@frozen enum SWEndpoints: String {
     case people
     case vehicle
     case starship

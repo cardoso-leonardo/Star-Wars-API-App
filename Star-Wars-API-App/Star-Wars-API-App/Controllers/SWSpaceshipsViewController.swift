@@ -19,13 +19,6 @@ final class SWSpaceshipsViewController: UIViewController {
         setupSubviews()
         setupTableViewConstraints()
         setupTable()
-        
-        SWService.shared.fetchStarshipData { starship in
-            self.starshipViewModels = starship.map({return SWStarshipViewModel(starship: $0)})
-            DispatchQueue.main.async {
-                self.table.reloadData()
-            }
-        }
     }
     
     private func setupSubviews() {

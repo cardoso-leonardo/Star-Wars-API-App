@@ -20,12 +20,16 @@ final class SWPeopleViewController: UIViewController {
         setupTableViewConstraints()
         setupTable()
         
-        SWService.shared.fetchPeopleData { people in
-            self.peopleViewModels = people.map({return SWPeopleViewModel(people: $0)})
-            DispatchQueue.main.async {
-                self.table.reloadData()
+        
+        SWService.shared.fetch(.listPeopleRequest, expecting: PeopleList.self) { result in
+            switch result {
+            case .success(let model):
+                print(String(describing: model))
+            case .failure(let error):
+                print(String(describing: error))
             }
         }
+        
     }
     
     private func setupSubviews() {
