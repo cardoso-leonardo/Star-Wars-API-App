@@ -18,7 +18,7 @@ class TMDBPeopleListView: UIView {
         collectionView.isHidden = true
         collectionView.alpha = 0
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
-        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
+        collectionView.register(TMDBPeopleCollectionViewCell.self, forCellWithReuseIdentifier: TMDBPeopleCollectionViewCell.cellIdentifier)
         return collectionView
     }()
     
@@ -34,9 +34,7 @@ class TMDBPeopleListView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(collectionView, spinner)
         spinner.startAnimating()
-        
         viewModel.fetchPeople()
-        
         addConstraints()
         setupCollectionView()
     }

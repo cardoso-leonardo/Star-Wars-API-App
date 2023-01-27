@@ -10,11 +10,23 @@ import UIKit
 
 final class TMDBPeopleListViewViewModel: NSObject {
     
-    func fetchPeople() {
-        TMDBService.shared.fetch(.listPeopleRequest, expecting: TMDBPopularPersonList.self) { result in
+    private var people: [Person] = [] {
+        didSet {
+            for person in people {
+                guard let name = person.name, let profilePath = person.profile_path else { return }
+                let viewModel = TMDBPeopleCollectionViewCellViewModel(nameText: name, profilePath: profilePath)
+                cellViewModels.append(viewModel)
+            }
+        }
+    }
+    
+    private var cellViewModels: [TMDBPeopleCollectionViewCellViewModel] = []
+    
+    public func fetchPeople() {
+        TMDBService.shared.fetch(.listPeopleRequest, expecting: TMDBPopularPersonList.self) { [weak self] result in
             switch result {
             case .success(let model):
-                print(String(describing: model))
+                self?.people = model.results
             case .failure(let error):
                 print(String(describing: error))
             }
@@ -23,12 +35,14 @@ final class TMDBPeopleListViewViewModel: NSObject {
 }
 extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 20
+        return cellViewModels.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
-        cell.backgroundColor = .systemRed
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: TMDBPeopleCollectionViewCell.cellIdentifier, for: indexPath) as? TMDBPeopleCollectionViewCell else {
+            fatalError("Unsupported Cell Type")
+        }
+        cell.configure(with: cellViewModels[indexPath.row])
         return cell
     }
     

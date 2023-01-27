@@ -16,25 +16,25 @@ struct Person: Codable {
     let adult: Bool?
     let gender: Int?
     let id: Int?
-    let knownFor: [KnownFor]?
-    let knownForDepartment: String?
+    let known_for: [KnownFor]?
+    let known_for_department: String?
     let name: String?
     let popularity: Double?
-    let profilePath: String?
+    let profile_path: String?
 }
 
 struct KnownFor: Codable {
-    let backdropPath: String?
-    let firstAirDate: String?
-    let genreIds: [Int]?
+    let backdrop_path: String?
+    let first_air_date: String?
+    let genre_ids: [Int]?
     let id: Int?
-    let mediaType: String
+    let media_type: String
     let name: String?
-    let originCountry: [String]?
-    let originalLanguage: String?
-    let originalName: String?
+    let origin_country: [String]?
+    let original_language: String?
+    let original_name: String?
     let overview: String?
-    let posterPath: String?
-    let voteAverage: Double?
-    let voteCount: Int?
+    let poster_path: String?
+    let vote_average: Double?
+    let vote_count: Int?
 }
