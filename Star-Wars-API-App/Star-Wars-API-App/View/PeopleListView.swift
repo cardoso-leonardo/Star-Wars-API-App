@@ -9,7 +9,7 @@ import UIKit
 
 class PeopleListView: UIView {
     
-    private let viewModel = PeopleListViewViewModel()
+    private let viewModel = TMDBPeopleListViewViewModel()
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()

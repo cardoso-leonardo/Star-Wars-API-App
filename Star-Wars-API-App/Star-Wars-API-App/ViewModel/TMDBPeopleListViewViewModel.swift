@@ -1,5 +1,5 @@
 //
-//  PeopleListViewViewModel.swift
+//  TMDBPeopleListViewViewModel.swift
 //  Star-Wars-API-App
 //
 //  Created by Leonardo Cardoso on 20/01/23.
@@ -8,10 +8,10 @@
 import Foundation
 import UIKit
 
-final class PeopleListViewViewModel: NSObject {
+final class TMDBPeopleListViewViewModel: NSObject {
     
     func fetchPeople() {
-        SWService.shared.fetch(.listPeopleRequest, expecting: PeopleList.self) { result in
+        TMDBService.shared.fetch(.listPeopleRequest, expecting: TMDBPopularPersonList.self) { result in
             switch result {
             case .success(let model):
                 print(String(describing: model))
@@ -21,7 +21,7 @@ final class PeopleListViewViewModel: NSObject {
         }
     }
 }
-extension PeopleListViewViewModel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 20
     }

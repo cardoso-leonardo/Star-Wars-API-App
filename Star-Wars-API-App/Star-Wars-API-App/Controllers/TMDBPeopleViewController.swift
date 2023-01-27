@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TMDBPeopleViewController.swift
 //  Star-Wars-API-App
 //
 //  Created by Leonardo Cardoso on 20/01/23.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-final class SWPeopleViewController: UIViewController {
+final class TMDBPeopleViewController: UIViewController {
     
     private let peopleListView = PeopleListView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Characters"
+        title = "Actors"
         view.backgroundColor = .systemBackground
         view.addSubview(peopleListView)
         

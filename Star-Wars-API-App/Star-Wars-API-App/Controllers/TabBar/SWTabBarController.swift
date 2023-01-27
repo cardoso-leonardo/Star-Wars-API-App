@@ -16,27 +16,27 @@ class SWTabBarController: UITabBarController {
     
     private func setupTabBar() {
         
-        let peopleVC = SWPeopleViewController()
-        let vehiclesVC = SWVehicleViewController()
-        let spaceshipsVC = SWStarshipViewController()
+        let peopleVC = TMDBPeopleViewController()
+        let moviesVC = TMDBMoviesViewController()
+        let tvShowsVC = TMDBTVShowsViewController()
         let settingsVC = SWSettingsViewController()
         
         let peopleNav = UINavigationController(rootViewController: peopleVC)
-        let vehiclesNav = UINavigationController(rootViewController: vehiclesVC)
-        let spaceshipsNav = UINavigationController(rootViewController: spaceshipsVC)
+        let moviesNav = UINavigationController(rootViewController: moviesVC)
+        let tvShowsNav = UINavigationController(rootViewController: tvShowsVC)
         let settingsNav = UINavigationController(rootViewController: settingsVC)
         
         
-        for nav in [peopleNav, vehiclesNav, spaceshipsNav, settingsNav] {
+        for nav in [peopleNav, moviesNav, tvShowsNav, settingsNav] {
             nav.navigationBar.prefersLargeTitles = true
         }
         
-        peopleNav.tabBarItem = UITabBarItem(title: "Characters", image: UIImage(systemName: "person"), tag: 0)
-        vehiclesNav.tabBarItem = UITabBarItem(title: "Vehicles", image: UIImage(systemName: "car"), tag: 1)
-        spaceshipsNav.tabBarItem = UITabBarItem(title: "Spaceships", image: UIImage(systemName: "airplane"), tag: 2)
+        peopleNav.tabBarItem = UITabBarItem(title: "Actors", image: UIImage(systemName: "person"), tag: 0)
+        moviesNav.tabBarItem = UITabBarItem(title: "Movies", image: UIImage(systemName: "film"), tag: 1)
+        tvShowsNav.tabBarItem = UITabBarItem(title: "TV Shows", image: UIImage(systemName: "tv"), tag: 2)
         settingsNav.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 3)
         
-        setViewControllers([peopleNav, vehiclesNav, spaceshipsNav, settingsNav], animated: true)
+        setViewControllers([peopleNav, moviesNav, tvShowsNav, settingsNav], animated: true)
         
     }
     

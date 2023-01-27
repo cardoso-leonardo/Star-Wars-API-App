@@ -1,5 +1,5 @@
 //
-//  File.swift
+//  TMDBService.swift
 //  Star-Wars-API-App
 //
 //  Created by Leonardo Cardoso on 20/01/23.
@@ -7,9 +7,9 @@
 
 import Foundation
 
-final class SWService{
+final class TMDBService{
     
-    static let shared = SWService()
+    static let shared = TMDBService()
     
     private init() {}
     
@@ -19,7 +19,7 @@ final class SWService{
     }
     
     
-    func fetch<T: Codable>(_ request: SWRequest, expecting type: T.Type, completion: @escaping (Result<T, Error>) -> Void){
+    func fetch<T: Codable>(_ request: TMDBRequest, expecting type: T.Type, completion: @escaping (Result<T, Error>) -> Void){
         
         guard let urlRequest = self.request(from: request) else {
             completion(.failure(SWServiceError.failedToCreateRequest))
@@ -48,7 +48,7 @@ final class SWService{
     
     //MARK: Private
     
-    private func request(from swRequest: SWRequest) -> URLRequest? {
+    private func request(from swRequest: TMDBRequest) -> URLRequest? {
         guard let url = swRequest.url else { return nil }
         var request = URLRequest(url: url)
         request.httpMethod = swRequest.httpMethod

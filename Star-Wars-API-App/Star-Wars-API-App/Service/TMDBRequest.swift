@@ -1,5 +1,5 @@
 //
-//  SWRequest.swift
+//  TMDBRequest.swift
 //  Star-Wars-API-App
 //
 //  Created by Leonardo Cardoso on 26/01/23.
@@ -7,7 +7,7 @@
 
 import Foundation
 
-final class SWRequest {
+final class TMDBRequest {
     
     private struct Constants {
         static let baseUrl = "https://api.themoviedb.org/3"
@@ -51,7 +51,7 @@ final class SWRequest {
     
     public let httpMethod = "GET"
     
-    init(endpoint: TMDBEndpoints, apiKey: String = , pathComponents: [String] = [], queryParameters: [URLQueryItem] = []) {
+    init(endpoint: TMDBEndpoints, apiKey: String = TMDBApiKey.apiKey, pathComponents: [String] = [], queryParameters: [URLQueryItem] = []) {
         self.endpoint = endpoint
         self.apiKey = apiKey
         self.pathComponents = pathComponents
@@ -61,8 +61,8 @@ final class SWRequest {
     
 }
 
-extension SWRequest {
-    static let listPeopleRequest = SWRequest(endpoint: .person)
-    static let listMoviesRequest = SWRequest(endpoint: .movie)
-    static let listTVShowsRequest = SWRequest(endpoint: .tv)
+extension TMDBRequest {
+    static let listPeopleRequest = TMDBRequest(endpoint: .person)
+    static let listMoviesRequest = TMDBRequest(endpoint: .movie)
+    static let listTVShowsRequest = TMDBRequest(endpoint: .tv)
 }
