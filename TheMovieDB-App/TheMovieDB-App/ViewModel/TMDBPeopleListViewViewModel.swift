@@ -8,7 +8,13 @@
 import Foundation
 import UIKit
 
+protocol TMDBPeopleListViewViewModelDelegate: AnyObject {
+    func didLoadInitialCharacters()
+}
+
 final class TMDBPeopleListViewViewModel: NSObject {
+    
+    public weak var delegate: TMDBPeopleListViewViewModelDelegate?
     
     private var people: [Person] = [] {
         didSet {
@@ -27,6 +33,9 @@ final class TMDBPeopleListViewViewModel: NSObject {
             switch result {
             case .success(let model):
                 self?.people = model.results
+                DispatchQueue.main.async {
+                    self?.delegate?.didLoadInitialCharacters()
+                }
             case .failure(let error):
                 print(String(describing: error))
             }
