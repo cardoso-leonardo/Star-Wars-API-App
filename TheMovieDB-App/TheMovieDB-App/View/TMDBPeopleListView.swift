@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TMDBPeopleListView: UIView {
+final class TMDBPeopleListView: UIView {
     
     private let viewModel = TMDBPeopleListViewViewModel()
     
