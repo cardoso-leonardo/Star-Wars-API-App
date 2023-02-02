@@ -16,6 +16,7 @@ final class TMDBPeopleViewController: UIViewController {
         title = "Actors"
         view.backgroundColor = .systemBackground
         view.addSubview(peopleListView)
+        peopleListView.delegate = self
         
         addConstraints()
     }
@@ -29,5 +30,11 @@ final class TMDBPeopleViewController: UIViewController {
         ])
     }
     
+}
+
+extension TMDBPeopleViewController: TMDBPeopleListViewDelegate {
+    func tmdbPeopleListView(_ peopleListView: TMDBPeopleListView, didSelectCharacter person: Person) {
+        <#code#>
+    }
 }
 

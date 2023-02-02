@@ -10,6 +10,7 @@ import UIKit
 
 protocol TMDBPeopleListViewViewModelDelegate: AnyObject {
     func didLoadInitialCharacters()
+    func didSelectPerson (_ person: Person)
 }
 
 final class TMDBPeopleListViewViewModel: NSObject {
@@ -62,5 +63,10 @@ extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionVie
         return CGSize(width: width, height: height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let person = people[indexPath.row]
+        delegate?.didSelectPerson(person)
+    }
     
 }

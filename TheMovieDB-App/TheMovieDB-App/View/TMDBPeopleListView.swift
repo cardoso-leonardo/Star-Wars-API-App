@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol TMDBPeopleListViewDelegate: AnyObject {
+    func tmdbPeopleListView(_ peopleListView: TMDBPeopleListView, didSelectCharacter person: Person)
+}
+
 class TMDBPeopleListView: UIView {
     
     private let viewModel = TMDBPeopleListViewViewModel()
+    
+    public weak var delegate: TMDBPeopleListViewDelegate?
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -66,6 +72,10 @@ class TMDBPeopleListView: UIView {
 }
 
 extension TMDBPeopleListView: TMDBPeopleListViewViewModelDelegate {
+    func didSelectPerson(_ person: Person) {
+        delegate?.tmdbPeopleListView(self, didSelectCharacter: person)
+    }
+    
     func didLoadInitialCharacters() {
         spinner.stopAnimating()
         collectionView.isHidden = false
