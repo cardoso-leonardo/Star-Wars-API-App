@@ -13,7 +13,7 @@ final class TMDBService{
     
     private init() {}
     
-    enum SWServiceError: Error {
+    enum TMDBServiceError: Error {
         case failedToCreateRequest
         case failedToGetData
     }
@@ -22,13 +22,13 @@ final class TMDBService{
     func fetch<T: Codable>(_ request: TMDBRequest, expecting type: T.Type, completion: @escaping (Result<T, Error>) -> Void){
         
         guard let urlRequest = self.request(from: request) else {
-            completion(.failure(SWServiceError.failedToCreateRequest))
+            completion(.failure(TMDBServiceError.failedToCreateRequest))
             return
         }
         
         let task = URLSession.shared.dataTask(with: urlRequest) { data, _, error in
             guard let data = data, error == nil else {
-                completion(.failure(error ?? SWServiceError.failedToGetData))
+                completion(.failure(error ?? TMDBServiceError.failedToGetData))
                 return
             }
             
