@@ -8,7 +8,7 @@
 import UIKit
 
 protocol TMDBPeopleListViewDelegate: AnyObject {
-    func tmdbPeopleListView(_ peopleListView: TMDBPeopleListView, didSelectCharacter person: Person)
+    func tmdbPeopleListView(_ peopleListView: TMDBPeopleListView, didSelect person: Person)
 }
 
 class TMDBPeopleListView: UIView {
@@ -73,7 +73,7 @@ class TMDBPeopleListView: UIView {
 
 extension TMDBPeopleListView: TMDBPeopleListViewViewModelDelegate {
     func didSelectPerson(_ person: Person) {
-        delegate?.tmdbPeopleListView(self, didSelectCharacter: person)
+        delegate?.tmdbPeopleListView(self, didSelect: person)
     }
     
     func didLoadInitialCharacters() {
@@ -83,6 +83,7 @@ extension TMDBPeopleListView: TMDBPeopleListViewViewModelDelegate {
         UIView.animate(withDuration: 0.4) {
             self.collectionView.alpha = 1
         }
+        viewModel.fetchAdditionalPeople()
         
     }
 }

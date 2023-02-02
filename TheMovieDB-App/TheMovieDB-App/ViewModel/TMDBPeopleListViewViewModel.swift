@@ -20,12 +20,16 @@ final class TMDBPeopleListViewViewModel: NSObject {
     private var people: [Person] = [] {
         didSet {
             for person in people {
-                guard let name = person.name, let profilePath = person.profile_path else { return }
-                let viewModel = TMDBPeopleCollectionViewCellViewModel(nameText: name, profilePath: profilePath)
+                guard let profilePath = person.profile_path else { return }
+                let viewModel = TMDBPeopleCollectionViewCellViewModel(nameText: person.name, profilePath: profilePath)
                 cellViewModels.append(viewModel)
             }
         }
     }
+    
+    private var currentPage: Int = 0
+    
+    private var totalPages: Int = 0
     
     private var cellViewModels: [TMDBPeopleCollectionViewCellViewModel] = []
     
@@ -34,6 +38,8 @@ final class TMDBPeopleListViewViewModel: NSObject {
             switch result {
             case .success(let model):
                 self?.people = model.results
+                self?.totalPages = model.total_pages
+                self?.currentPage = model.page
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadInitialCharacters()
                 }
@@ -42,7 +48,17 @@ final class TMDBPeopleListViewViewModel: NSObject {
             }
         }
     }
+    
+    public func fetchAdditionalPeople() {
+        
+    }
+    
+    public var shouldShowLoadMoreIndicator: Bool {
+        return currentPage <= totalPages
+    }
 }
+
+//MARK: CollectionView
 extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cellViewModels.count
@@ -68,5 +84,13 @@ extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionVie
         let person = people[indexPath.row]
         delegate?.didSelectPerson(person)
     }
-    
 }
+
+//MARK: ScrollView
+extension TMDBPeopleListViewViewModel: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard shouldShowLoadMoreIndicator else { return }
+        
+    }
+}
+
