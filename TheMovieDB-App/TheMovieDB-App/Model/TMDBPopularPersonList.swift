@@ -10,6 +10,7 @@ import Foundation
 struct TMDBPopularPersonList: Codable {
     let page: Int
     let results: [Person]
+    let total_pages: Int
 }
 
 struct Person: Codable {
@@ -18,7 +19,7 @@ struct Person: Codable {
     let id: Int?
     let known_for: [KnownFor]?
     let known_for_department: String?
-    let name: String?
+    let name: String
     let popularity: Double?
     let profile_path: String?
 }

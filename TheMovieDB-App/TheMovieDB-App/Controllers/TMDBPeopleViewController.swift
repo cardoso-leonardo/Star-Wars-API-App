@@ -16,6 +16,7 @@ final class TMDBPeopleViewController: UIViewController {
         title = "Actors"
         view.backgroundColor = .systemBackground
         view.addSubview(peopleListView)
+        peopleListView.delegate = self
         
         addConstraints()
     }
@@ -29,5 +30,14 @@ final class TMDBPeopleViewController: UIViewController {
         ])
     }
     
+}
+
+extension TMDBPeopleViewController: TMDBPeopleListViewDelegate {
+    func tmdbPeopleListView(_ peopleListView: TMDBPeopleListView, didSelect person: Person) {
+        let viewModel = TMDBPeopleDetailViewViewModel(person: person)
+        let detailVC = TMDBPeopleDetailViewController(viewModel: viewModel)
+        detailVC.navigationItem.largeTitleDisplayMode = .never
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
 

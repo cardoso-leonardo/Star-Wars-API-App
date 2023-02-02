@@ -38,12 +38,12 @@ final class TMDBPeopleCollectionViewCell: UICollectionViewCell {
     
     public func configure(with viewModel: TMDBPeopleCollectionViewCellViewModel) {
         nameLabel.text = viewModel.nameText
-        viewModel.fetchImage { result in
+        viewModel.fetchImage { [weak self] result in
             switch result {
             case .success(let data):
                 DispatchQueue.main.async {
                     let image = UIImage(data: data)
-                    self.imageView.image = image
+                    self?.imageView.image = image
                 }
             case .failure(let error):
                 print(String(describing: error))
