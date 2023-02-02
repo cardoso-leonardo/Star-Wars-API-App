@@ -8,7 +8,14 @@
 import Foundation
 import UIKit
 
+protocol TMDBPeopleListViewViewModelDelegate: AnyObject {
+    func didLoadInitialCharacters()
+    func didSelectPerson (_ person: Person)
+}
+
 final class TMDBPeopleListViewViewModel: NSObject {
+    
+    public weak var delegate: TMDBPeopleListViewViewModelDelegate?
     
     private var people: [Person] = [] {
         didSet {
@@ -27,6 +34,9 @@ final class TMDBPeopleListViewViewModel: NSObject {
             switch result {
             case .success(let model):
                 self?.people = model.results
+                DispatchQueue.main.async {
+                    self?.delegate?.didLoadInitialCharacters()
+                }
             case .failure(let error):
                 print(String(describing: error))
             }
@@ -53,5 +63,10 @@ extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionVie
         return CGSize(width: width, height: height)
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        let person = people[indexPath.row]
+        delegate?.didSelectPerson(person)
+    }
     
 }

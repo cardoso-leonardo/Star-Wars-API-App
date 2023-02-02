@@ -7,9 +7,15 @@
 
 import UIKit
 
+protocol TMDBPeopleListViewDelegate: AnyObject {
+    func tmdbPeopleListView(_ peopleListView: TMDBPeopleListView, didSelectCharacter person: Person)
+}
+
 class TMDBPeopleListView: UIView {
     
     private let viewModel = TMDBPeopleListViewViewModel()
+    
+    public weak var delegate: TMDBPeopleListViewDelegate?
     
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -34,6 +40,7 @@ class TMDBPeopleListView: UIView {
         translatesAutoresizingMaskIntoConstraints = false
         addSubviews(collectionView, spinner)
         spinner.startAnimating()
+        viewModel.delegate = self
         viewModel.fetchPeople()
         addConstraints()
         setupCollectionView()
@@ -60,14 +67,22 @@ class TMDBPeopleListView: UIView {
     private func setupCollectionView() {
         collectionView.delegate = viewModel
         collectionView.dataSource = viewModel
-        
-        DispatchQueue.main.asyncAfter(deadline: .now()+2,execute: {
-            self.spinner.stopAnimating()
-            UIView.animate(withDuration: 2) {
-                self.collectionView.isHidden = false
-                self.collectionView.alpha = 1
-            }
-        })
     }
     
+}
+
+extension TMDBPeopleListView: TMDBPeopleListViewViewModelDelegate {
+    func didSelectPerson(_ person: Person) {
+        delegate?.tmdbPeopleListView(self, didSelectCharacter: person)
+    }
+    
+    func didLoadInitialCharacters() {
+        spinner.stopAnimating()
+        collectionView.isHidden = false
+        collectionView.reloadData()
+        UIView.animate(withDuration: 0.4) {
+            self.collectionView.alpha = 1
+        }
+        
+    }
 }
