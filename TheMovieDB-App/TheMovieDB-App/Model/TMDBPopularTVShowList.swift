@@ -11,6 +11,7 @@ import Foundation
 struct TMDBPopularTVShowList: Codable {
     let page: Int
     let results: [TVShow]
+    let total_pages: Int
 }
 
 struct TVShow: Codable{

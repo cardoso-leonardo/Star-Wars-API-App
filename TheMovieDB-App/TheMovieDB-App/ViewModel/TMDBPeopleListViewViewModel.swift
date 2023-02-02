@@ -20,8 +20,8 @@ final class TMDBPeopleListViewViewModel: NSObject {
     private var people: [Person] = [] {
         didSet {
             for person in people {
-                guard let name = person.name, let profilePath = person.profile_path else { return }
-                let viewModel = TMDBPeopleCollectionViewCellViewModel(nameText: name, profilePath: profilePath)
+                guard let profilePath = person.profile_path else { return }
+                let viewModel = TMDBPeopleCollectionViewCellViewModel(nameText: person.name, profilePath: profilePath)
                 cellViewModels.append(viewModel)
             }
         }
@@ -42,7 +42,17 @@ final class TMDBPeopleListViewViewModel: NSObject {
             }
         }
     }
+    
+    public func fetchAdditionalPeople() {
+        
+    }
+    
+    public var shouldShowLoadMoreIndicator: Bool {
+        return false
+    }
 }
+
+//MARK: CollectionView
 extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return cellViewModels.count
@@ -68,5 +78,10 @@ extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionVie
         let person = people[indexPath.row]
         delegate?.didSelectPerson(person)
     }
-    
 }
+extension TMDBPeopleListViewViewModel: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        guard shouldShowLoadMoreIndicator else { return }
+    }
+}
+

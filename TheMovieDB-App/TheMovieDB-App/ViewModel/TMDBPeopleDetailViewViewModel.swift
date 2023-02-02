@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+
+final class TMDBPeopleDetailViewViewModel {
+    
+    private let person: Person
+    
+    init(person: Person) {
+        self.person = person
+    }
+    
+    public var title: String {
+        person.name.uppercased()
+    }
+    
+}
