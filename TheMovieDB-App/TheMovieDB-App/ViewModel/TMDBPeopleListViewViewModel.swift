@@ -27,6 +27,10 @@ final class TMDBPeopleListViewViewModel: NSObject {
         }
     }
     
+    private var currentPage: Int = 0
+    
+    private var totalPages: Int = 0
+    
     private var cellViewModels: [TMDBPeopleCollectionViewCellViewModel] = []
     
     public func fetchPeople() {
@@ -34,6 +38,8 @@ final class TMDBPeopleListViewViewModel: NSObject {
             switch result {
             case .success(let model):
                 self?.people = model.results
+                self?.totalPages = model.total_pages
+                self?.currentPage = model.page
                 DispatchQueue.main.async {
                     self?.delegate?.didLoadInitialCharacters()
                 }
@@ -48,7 +54,7 @@ final class TMDBPeopleListViewViewModel: NSObject {
     }
     
     public var shouldShowLoadMoreIndicator: Bool {
-        return false
+        return currentPage <= totalPages
     }
 }
 
@@ -79,9 +85,12 @@ extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionVie
         delegate?.didSelectPerson(person)
     }
 }
+
+//MARK: ScrollView
 extension TMDBPeopleListViewViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         guard shouldShowLoadMoreIndicator else { return }
+        
     }
 }
 

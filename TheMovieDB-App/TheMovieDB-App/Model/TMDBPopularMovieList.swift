@@ -10,7 +10,7 @@ import Foundation
 struct TMDBPopularMovieList: Codable {
     let page: Int
     let results: [Movie]
-    let total_pages: Int
+    let total_pages: Int?
 }
 
 struct Movie: Codable {

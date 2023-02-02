@@ -83,6 +83,7 @@ extension TMDBPeopleListView: TMDBPeopleListViewViewModelDelegate {
         UIView.animate(withDuration: 0.4) {
             self.collectionView.alpha = 1
         }
+        viewModel.fetchAdditionalPeople()
         
     }
 }
