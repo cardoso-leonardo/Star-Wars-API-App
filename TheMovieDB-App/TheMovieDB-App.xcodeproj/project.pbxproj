@@ -438,7 +438,7 @@
 				DEVELOPMENT_TEAM = 3Z72SDHS75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TheMovieDB-App/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "TheMovieDB App";
+				INFOPLIST_KEY_CFBundleDisplayName = "Movies App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
@@ -466,7 +466,7 @@
 				DEVELOPMENT_TEAM = 3Z72SDHS75;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "TheMovieDB-App/Info.plist";
-				INFOPLIST_KEY_CFBundleDisplayName = "TheMovieDB App";
+				INFOPLIST_KEY_CFBundleDisplayName = "Movies App";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
