@@ -22,8 +22,10 @@
 		2781B56C29833FA8007EED8E /* TMDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781B56B29833FA8007EED8E /* TMDBRequest.swift */; };
 		2781B56E29833FB9007EED8E /* TMDBEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781B56D29833FB9007EED8E /* TMDBEndpoints.swift */; };
 		2781B570298360FF007EED8E /* TMDBPeopleListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781B56F298360FF007EED8E /* TMDBPeopleListView.swift */; };
-		2781B57229836BA6007EED8E /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781B57129836BA6007EED8E /* Extensions.swift */; };
+		2781B57229836BA6007EED8E /* ExtUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781B57129836BA6007EED8E /* ExtUIView.swift */; };
 		2781B574298397EF007EED8E /* TMDBApiKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2781B573298397EF007EED8E /* TMDBApiKey.swift */; };
+		279C8782298D997D006F1DFB /* TMDBMovieTableViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C8781298D997D006F1DFB /* TMDBMovieTableViewViewModel.swift */; };
+		279C8784298D998A006F1DFB /* TMDBMovieTableViewCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279C8783298D998A006F1DFB /* TMDBMovieTableViewCellViewModel.swift */; };
 		27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F58297A475C003000CD /* AppDelegate.swift */; };
 		27BB5F5B297A475C003000CD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5A297A475C003000CD /* SceneDelegate.swift */; };
 		27BB5F5D297A475C003000CD /* TMDBPeopleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27BB5F5C297A475C003000CD /* TMDBPeopleViewController.swift */; };
@@ -52,8 +54,10 @@
 		2781B56B29833FA8007EED8E /* TMDBRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBRequest.swift; sourceTree = "<group>"; };
 		2781B56D29833FB9007EED8E /* TMDBEndpoints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBEndpoints.swift; sourceTree = "<group>"; };
 		2781B56F298360FF007EED8E /* TMDBPeopleListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBPeopleListView.swift; sourceTree = "<group>"; };
-		2781B57129836BA6007EED8E /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		2781B57129836BA6007EED8E /* ExtUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtUIView.swift; sourceTree = "<group>"; };
 		2781B573298397EF007EED8E /* TMDBApiKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBApiKey.swift; sourceTree = "<group>"; };
+		279C8781298D997D006F1DFB /* TMDBMovieTableViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMovieTableViewViewModel.swift; sourceTree = "<group>"; };
+		279C8783298D998A006F1DFB /* TMDBMovieTableViewCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMDBMovieTableViewCellViewModel.swift; sourceTree = "<group>"; };
 		27BB5F55297A475C003000CD /* TheMovieDB-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TheMovieDB-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		27BB5F58297A475C003000CD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27BB5F5A297A475C003000CD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +107,14 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		279C8785298D9A2D006F1DFB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				2781B57129836BA6007EED8E /* ExtUIView.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		27BB5F4C297A475C003000CD = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +134,7 @@
 		27BB5F57297A475C003000CD /* TheMovieDB-App */ = {
 			isa = PBXGroup;
 			children = (
+				279C8785298D9A2D006F1DFB /* Extensions */,
 				27BB5F66297A475D003000CD /* Info.plist */,
 				27BB5F72297A48B9003000CD /* Resources */,
 				27BB5F73297A48E6003000CD /* Service */,
@@ -162,6 +175,8 @@
 				27BB5F78297A5A03003000CD /* TMDBPeopleListViewViewModel.swift */,
 				27DDBB1229844D4A00FCB7E0 /* TMDBPeopleCollectionViewCellViewModel.swift */,
 				2781825E298B381200671EAA /* TMDBPeopleDetailViewViewModel.swift */,
+				279C8781298D997D006F1DFB /* TMDBMovieTableViewViewModel.swift */,
+				279C8783298D998A006F1DFB /* TMDBMovieTableViewCellViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -186,7 +201,6 @@
 				27BB5F58297A475C003000CD /* AppDelegate.swift */,
 				27BB5F5A297A475C003000CD /* SceneDelegate.swift */,
 				27BB5F63297A475D003000CD /* LaunchScreen.storyboard */,
-				2781B57129836BA6007EED8E /* Extensions.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -273,11 +287,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				274415AD298064CD00D67744 /* TMDBTVShowsViewController.swift in Sources */,
-				2781B57229836BA6007EED8E /* Extensions.swift in Sources */,
+				2781B57229836BA6007EED8E /* ExtUIView.swift in Sources */,
 				2781B56E29833FB9007EED8E /* TMDBEndpoints.swift in Sources */,
 				27818264298C317E00671EAA /* TMDBImageLoaderManager.swift in Sources */,
 				2781B574298397EF007EED8E /* TMDBApiKey.swift in Sources */,
 				27BB5F77297A53EF003000CD /* TMDBService.swift in Sources */,
+				279C8782298D997D006F1DFB /* TMDBMovieTableViewViewModel.swift in Sources */,
 				27BB5F79297A5A03003000CD /* TMDBPeopleListViewViewModel.swift in Sources */,
 				27DDBB1329844D4A00FCB7E0 /* TMDBPeopleCollectionViewCellViewModel.swift in Sources */,
 				27BB5F5D297A475C003000CD /* TMDBPeopleViewController.swift in Sources */,
@@ -289,6 +304,7 @@
 				274415B129808A2B00D67744 /* TMDBPopularPersonList.swift in Sources */,
 				27757AD629897D06003C18D6 /* TMDBMovieTableViewCell.swift in Sources */,
 				27DDBB11298448D300FCB7E0 /* TMDBPeopleCollectionViewCell.swift in Sources */,
+				279C8784298D998A006F1DFB /* TMDBMovieTableViewCellViewModel.swift in Sources */,
 				27757AD4298977D1003C18D6 /* TMDBMovieTableView.swift in Sources */,
 				27BB5F59297A475C003000CD /* AppDelegate.swift in Sources */,
 				2781B570298360FF007EED8E /* TMDBPeopleListView.swift in Sources */,
