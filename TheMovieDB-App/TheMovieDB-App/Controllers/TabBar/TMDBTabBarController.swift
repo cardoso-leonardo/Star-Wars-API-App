@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TMDBTabBarController: UITabBarController {
+final class TMDBTabBarController: UITabBarController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,9 +32,9 @@ class TMDBTabBarController: UITabBarController {
         }
         
         peopleNav.tabBarItem = UITabBarItem(title: "Actors", image: UIImage(systemName: "person"), tag: 0)
-        moviesNav.tabBarItem = UITabBarItem(title: "Movies", image: UIImage(systemName: "film"), tag: 1)
+        moviesNav.tabBarItem = UITabBarItem(title: "Movies", image: UIImage(systemName: "film.stack"), tag: 1)
         tvShowsNav.tabBarItem = UITabBarItem(title: "TV Shows", image: UIImage(systemName: "tv"), tag: 2)
-        settingsNav.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gear"), tag: 3)
+        settingsNav.tabBarItem = UITabBarItem(title: "Settings", image: UIImage(systemName: "gearshape"), tag: 3)
         
         setViewControllers([peopleNav, moviesNav, tvShowsNav, settingsNav], animated: true)
         

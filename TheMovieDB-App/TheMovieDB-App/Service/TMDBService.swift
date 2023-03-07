@@ -13,7 +13,7 @@ final class TMDBService{
     
     private init() {}
     
-    enum TMDBServiceError: Error {
+    private enum TMDBServiceError: Error {
         case failedToCreateRequest
         case failedToGetData
     }

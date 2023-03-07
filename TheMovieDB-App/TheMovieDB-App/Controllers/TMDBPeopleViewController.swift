@@ -17,7 +17,6 @@ final class TMDBPeopleViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(peopleListView)
         peopleListView.delegate = self
-        
         addConstraints()
     }
     

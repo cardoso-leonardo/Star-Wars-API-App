@@ -11,7 +11,7 @@ protocol TMDBPeopleListViewDelegate: AnyObject {
     func tmdbPeopleListView(_ peopleListView: TMDBPeopleListView, didSelect person: Person)
 }
 
-class TMDBPeopleListView: UIView {
+final class TMDBPeopleListView: UIView {
     
     private let viewModel = TMDBPeopleListViewViewModel()
     
