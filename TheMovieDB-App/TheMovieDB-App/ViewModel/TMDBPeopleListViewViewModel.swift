@@ -27,7 +27,7 @@ final class TMDBPeopleListViewViewModel: NSObject {
         }
     }
     
-    private var currentPage: Int = 0
+    private var currentPage: Int = 1
     
     private var totalPages: Int = 0
     
