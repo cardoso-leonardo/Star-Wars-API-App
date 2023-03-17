@@ -25,6 +25,7 @@ final class TMDBPeopleListView: UIView {
         collectionView.alpha = 0
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         collectionView.register(TMDBPeopleCollectionViewCell.self, forCellWithReuseIdentifier: TMDBPeopleCollectionViewCell.cellIdentifier)
+        collectionView.register(TMDBFooterLoadingCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: TMDBFooterLoadingCollectionReusableView.identifier)
         return collectionView
     }()
     

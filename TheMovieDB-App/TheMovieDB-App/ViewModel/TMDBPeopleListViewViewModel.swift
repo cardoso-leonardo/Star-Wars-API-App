@@ -54,7 +54,7 @@ final class TMDBPeopleListViewViewModel: NSObject {
     }
     
     public var shouldShowLoadMoreIndicator: Bool {
-        return currentPage <= totalPages
+        return true // currentPage <= totalPages
     }
 }
 
@@ -84,6 +84,19 @@ extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionVie
         let person = people[indexPath.row]
         delegate?.didSelectPerson(person)
     }
+    
+    func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        guard kind == UICollectionView.elementKindSectionFooter,
+              let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TMDBFooterLoadingCollectionReusableView.identifier, for: indexPath) as? TMDBFooterLoadingCollectionReusableView else {fatalError("Unsupported")}
+        footer.startAnimating()
+        return footer
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        guard shouldShowLoadMoreIndicator else { return .zero }
+        return CGSize(width: collectionView.frame.width, height: 100)
+    }
+    
 }
 
 //MARK: ScrollView

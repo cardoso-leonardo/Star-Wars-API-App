@@ -9,6 +9,8 @@ import UIKit
 
 final class TMDBFooterLoadingCollectionReusableView: UICollectionReusableView {
     
+    public static let identifier = "TMDBFooterLoadingCollectionReusableView"
+    
     private let spinner: UIActivityIndicatorView = {
         let spinner = UIActivityIndicatorView(style: .large)
         spinner.hidesWhenStopped = true
@@ -18,6 +20,8 @@ final class TMDBFooterLoadingCollectionReusableView: UICollectionReusableView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .systemBackground
+        addSubview(spinner)
         addConstraints()
     }
     
