@@ -56,6 +56,8 @@ final class TMDBPeopleListViewViewModel: NSObject {
     public var shouldShowLoadMoreIndicator: Bool {
         return true // currentPage <= totalPages
     }
+    
+    private var isLoadingMore = false
 }
 
 //MARK: CollectionView
@@ -87,7 +89,7 @@ extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionVie
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         guard kind == UICollectionView.elementKindSectionFooter,
-              let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TMDBFooterLoadingCollectionReusableView.identifier, for: indexPath) as? TMDBFooterLoadingCollectionReusableView else {fatalError("Unsupported")}
+              let footer = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: TMDBFooterLoadingCollectionReusableView.identifier, for: indexPath) as? TMDBFooterLoadingCollectionReusableView else { fatalError("Unsupported") }
         footer.startAnimating()
         return footer
     }
@@ -102,7 +104,20 @@ extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionVie
 //MARK: ScrollView
 extension TMDBPeopleListViewViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard shouldShowLoadMoreIndicator else { return }
+        guard shouldShowLoadMoreIndicator, !isLoadingMore else { return }
+        
+        let offset = scrollView.contentOffset.y
+        let contentHeight = scrollView.contentSize.height
+        let frameHeight = scrollView.frame.size.height
+        
+//        print("offset: \(offset)")
+//        print("contentHeight: \(contentHeight)")
+//        print("frameHeight: \(frameHeight)")
+        
+        if offset >= (contentHeight-frameHeight-120) {
+            print("Should load more")
+            isLoadingMore = true
+        }
         
     }
 }
