@@ -20,10 +20,11 @@ final class TMDBPeopleListViewViewModel: NSObject {
     
     private var people: [Person] = [] {
         didSet {
-            for person in people where !cellViewModels.contains(where: {$0.nameText == person.name}){
-                guard let profilePath = person.profile_path else { return }
-                let viewModel = TMDBPeopleCollectionViewCellViewModel(nameText: person.name, profilePath: profilePath)
-                cellViewModels.append(viewModel)
+            for person in people {
+                let viewModel = TMDBPeopleCollectionViewCellViewModel(nameText: person.name, profilePath: person.profile_path ?? nil)
+                if !cellViewModels.contains(viewModel) {
+                    cellViewModels.append(viewModel)
+                }
             }
         }
     }
@@ -42,7 +43,6 @@ final class TMDBPeopleListViewViewModel: NSObject {
                 strongSelf.people = model.results
                 strongSelf.totalPages = model.total_pages
                 strongSelf.currentPage = model.page + 1
-                print(String(strongSelf.currentPage),String(strongSelf.totalPages))
                 DispatchQueue.main.async {
                     strongSelf.delegate?.didLoadInitialCharacters()
                 }
@@ -55,7 +55,6 @@ final class TMDBPeopleListViewViewModel: NSObject {
     public func fetchAdditionalPeople() {
         guard !isLoadingMore else { return }
         isLoadingMore = true
-        print("Fetching more people")
         let queryItems = [URLQueryItem(name: "page", value: String(currentPage))]
         let request = TMDBRequest(endpoint: .person, queryParameters: queryItems)
         TMDBService.shared.fetch(request, expecting: TMDBPopularPersonList.self) { [weak self] result in
@@ -64,23 +63,37 @@ final class TMDBPeopleListViewViewModel: NSObject {
             case .success(let model):
                 
                 strongSelf.totalPages = model.total_pages
+                print(String(strongSelf.currentPage))
                 strongSelf.currentPage = model.page + 1
                 
                 let originalCount = strongSelf.people.count
                 let newCount = model.results.count
                 let total = originalCount + newCount
                 let startingIndex = total - newCount
+//                print (
+//                """
+//                originalCount = \(originalCount)
+//                newCount = \(newCount)
+//                total = \(total)
+//                startingIndex = \(startingIndex)
+//
+//                """
+//                )
                 let indexPathsToAdd: [IndexPath] = Array(startingIndex..<(startingIndex+newCount)).compactMap {
                     return IndexPath(row: $0, section: 0)
                 }
                 
                 
                 strongSelf.people.append(contentsOf: model.results)
-                print(String(strongSelf.cellViewModels.count))
+                for c in strongSelf.cellViewModels {
+                    print(String(describing: c.nameText))
+                    //                print(String(strongSelf.cellViewModels.count))
+                }
                 DispatchQueue.main.async {
                     strongSelf.delegate?.didLoadMorePeople(with: indexPathsToAdd)
+                    strongSelf.isLoadingMore = false
                 }
-                strongSelf.isLoadingMore = false
+                
             case .failure(let error):
                 print(String(describing: error))
             }
