@@ -73,6 +73,12 @@ final class TMDBPeopleListView: UIView {
 }
 
 extension TMDBPeopleListView: TMDBPeopleListViewViewModelDelegate {
+    func didLoadMorePeople(with newIndexPaths: [IndexPath]) {
+        collectionView.performBatchUpdates {
+            self.collectionView.insertItems(at: newIndexPaths)
+        }
+    }
+    
     func didSelectPerson(_ person: Person) {
         delegate?.tmdbPeopleListView(self, didSelect: person)
     }

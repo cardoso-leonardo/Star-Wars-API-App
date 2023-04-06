@@ -10,6 +10,7 @@ import UIKit
 
 protocol TMDBPeopleListViewViewModelDelegate: AnyObject {
     func didLoadInitialCharacters()
+    func didLoadMorePeople(with newIndexPaths: [IndexPath])
     func didSelectPerson (_ person: Person)
 }
 
@@ -19,7 +20,7 @@ final class TMDBPeopleListViewViewModel: NSObject {
     
     private var people: [Person] = [] {
         didSet {
-            for person in people {
+            for person in people where !cellViewModels.contains(where: {$0.nameText == person.name}){
                 guard let profilePath = person.profile_path else { return }
                 let viewModel = TMDBPeopleCollectionViewCellViewModel(nameText: person.name, profilePath: profilePath)
                 cellViewModels.append(viewModel)
@@ -35,13 +36,15 @@ final class TMDBPeopleListViewViewModel: NSObject {
     
     public func fetchPeople() {
         TMDBService.shared.fetch(.listPeopleRequest, expecting: TMDBPopularPersonList.self) { [weak self] result in
+            guard let strongSelf = self else { return }
             switch result {
             case .success(let model):
-                self?.people = model.results
-                self?.totalPages = model.total_pages
-                self?.currentPage = model.page
+                strongSelf.people = model.results
+                strongSelf.totalPages = model.total_pages
+                strongSelf.currentPage = model.page + 1
+                print(String(strongSelf.currentPage),String(strongSelf.totalPages))
                 DispatchQueue.main.async {
-                    self?.delegate?.didLoadInitialCharacters()
+                    strongSelf.delegate?.didLoadInitialCharacters()
                 }
             case .failure(let error):
                 print(String(describing: error))
@@ -50,11 +53,42 @@ final class TMDBPeopleListViewViewModel: NSObject {
     }
     
     public func fetchAdditionalPeople() {
-        
+        guard !isLoadingMore else { return }
+        isLoadingMore = true
+        print("Fetching more people")
+        let queryItems = [URLQueryItem(name: "page", value: String(currentPage))]
+        let request = TMDBRequest(endpoint: .person, queryParameters: queryItems)
+        TMDBService.shared.fetch(request, expecting: TMDBPopularPersonList.self) { [weak self] result in
+            guard let strongSelf = self else { return }
+            switch result {
+            case .success(let model):
+                
+                strongSelf.totalPages = model.total_pages
+                strongSelf.currentPage = model.page + 1
+                
+                let originalCount = strongSelf.people.count
+                let newCount = model.results.count
+                let total = originalCount + newCount
+                let startingIndex = total - newCount
+                let indexPathsToAdd: [IndexPath] = Array(startingIndex..<(startingIndex+newCount)).compactMap {
+                    return IndexPath(row: $0, section: 0)
+                }
+                
+                
+                strongSelf.people.append(contentsOf: model.results)
+                print(String(strongSelf.cellViewModels.count))
+                DispatchQueue.main.async {
+                    strongSelf.delegate?.didLoadMorePeople(with: indexPathsToAdd)
+                }
+                strongSelf.isLoadingMore = false
+            case .failure(let error):
+                print(String(describing: error))
+            }
+        }
     }
     
-    public var shouldShowLoadMoreIndicator: Bool {
-        return true // currentPage <= totalPages
+    private var shouldShowLoadMoreIndicator: Bool {
+        return currentPage <= totalPages
     }
     
     private var isLoadingMore = false
@@ -104,21 +138,20 @@ extension TMDBPeopleListViewViewModel: UICollectionViewDelegate, UICollectionVie
 //MARK: ScrollView
 extension TMDBPeopleListViewViewModel: UIScrollViewDelegate {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        guard shouldShowLoadMoreIndicator, !isLoadingMore else { return }
+        guard shouldShowLoadMoreIndicator,
+              !isLoadingMore,
+              !cellViewModels.isEmpty
+        else { return }
         
-        let offset = scrollView.contentOffset.y
-        let contentHeight = scrollView.contentSize.height
-        let frameHeight = scrollView.frame.size.height
-        
-//        print("offset: \(offset)")
-//        print("contentHeight: \(contentHeight)")
-//        print("frameHeight: \(frameHeight)")
-        
-        if offset >= (contentHeight-frameHeight-120) {
-            print("Should load more")
-            isLoadingMore = true
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: false){ [weak self] t in
+            let offset = scrollView.contentOffset.y
+            let contentHeight = scrollView.contentSize.height
+            let frameHeight = scrollView.frame.size.height
+            if offset >= (contentHeight-frameHeight-120) {
+                self?.fetchAdditionalPeople()
+            }
+            t.invalidate()
         }
-        
     }
 }
 
