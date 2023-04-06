@@ -11,7 +11,7 @@ protocol TMDBPeopleListViewDelegate: AnyObject {
     func tmdbPeopleListView(_ peopleListView: TMDBPeopleListView, didSelect person: Person)
 }
 
-class TMDBPeopleListView: UIView {
+final class TMDBPeopleListView: UIView {
     
     private let viewModel = TMDBPeopleListViewViewModel()
     
@@ -25,6 +25,7 @@ class TMDBPeopleListView: UIView {
         collectionView.alpha = 0
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: 10)
         collectionView.register(TMDBPeopleCollectionViewCell.self, forCellWithReuseIdentifier: TMDBPeopleCollectionViewCell.cellIdentifier)
+        collectionView.register(TMDBFooterLoadingCollectionReusableView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: TMDBFooterLoadingCollectionReusableView.identifier)
         return collectionView
     }()
     
@@ -72,6 +73,12 @@ class TMDBPeopleListView: UIView {
 }
 
 extension TMDBPeopleListView: TMDBPeopleListViewViewModelDelegate {
+    func didLoadMorePeople(with newIndexPaths: [IndexPath]) {
+        collectionView.performBatchUpdates {
+            self.collectionView.insertItems(at: newIndexPaths)
+        }
+    }
+    
     func didSelectPerson(_ person: Person) {
         delegate?.tmdbPeopleListView(self, didSelect: person)
     }
@@ -83,7 +90,6 @@ extension TMDBPeopleListView: TMDBPeopleListViewViewModelDelegate {
         UIView.animate(withDuration: 0.4) {
             self.collectionView.alpha = 1
         }
-        viewModel.fetchAdditionalPeople()
         
     }
 }

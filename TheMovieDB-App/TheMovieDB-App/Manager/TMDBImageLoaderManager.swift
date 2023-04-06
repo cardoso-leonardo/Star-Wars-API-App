@@ -32,7 +32,6 @@ final class TMBDImageLoaderManager {
             
             onCompletion(.success(data))
             self.imageCache.setObject(data as NSData, forKey: url as NSURL)
-            print("API image request")
        
         }
         task.resume()

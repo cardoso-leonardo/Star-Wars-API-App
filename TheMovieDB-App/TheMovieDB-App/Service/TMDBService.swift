@@ -13,7 +13,7 @@ final class TMDBService{
     
     private init() {}
     
-    enum TMDBServiceError: Error {
+    private enum TMDBServiceError: Error {
         case failedToCreateRequest
         case failedToGetData
     }
@@ -41,17 +41,15 @@ final class TMDBService{
             
         }
         task.resume()
-        
-        
     }
     
     
     //MARK: Private
     
-    private func request(from swRequest: TMDBRequest) -> URLRequest? {
-        guard let url = swRequest.url else { return nil }
+    private func request(from tmdbRequest: TMDBRequest) -> URLRequest? {
+        guard let url = tmdbRequest.url else { return nil }
         var request = URLRequest(url: url)
-        request.httpMethod = swRequest.httpMethod
+        request.httpMethod = tmdbRequest.httpMethod
         return request
     }
     
