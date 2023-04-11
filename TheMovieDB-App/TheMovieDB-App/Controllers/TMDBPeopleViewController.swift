@@ -20,7 +20,7 @@ final class TMDBPeopleViewController: UIViewController {
         addConstraints()
     }
     
-    func addConstraints() {
+    private func addConstraints() {
         NSLayoutConstraint.activate([
             peopleListView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
             peopleListView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),

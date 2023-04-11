@@ -63,32 +63,16 @@ final class TMDBPeopleListViewViewModel: NSObject {
             case .success(let model):
                 
                 strongSelf.totalPages = model.total_pages
-                print(String(strongSelf.currentPage))
                 strongSelf.currentPage = model.page + 1
                 
                 let originalCount = strongSelf.people.count
                 let newCount = model.results.count
                 let total = originalCount + newCount
                 let startingIndex = total - newCount
-//                print (
-//                """
-//                originalCount = \(originalCount)
-//                newCount = \(newCount)
-//                total = \(total)
-//                startingIndex = \(startingIndex)
-//
-//                """
-//                )
                 let indexPathsToAdd: [IndexPath] = Array(startingIndex..<(startingIndex+newCount)).compactMap {
                     return IndexPath(row: $0, section: 0)
                 }
-                
-                
                 strongSelf.people.append(contentsOf: model.results)
-                for c in strongSelf.cellViewModels {
-                    print(String(describing: c.nameText))
-                    //                print(String(strongSelf.cellViewModels.count))
-                }
                 DispatchQueue.main.async {
                     strongSelf.delegate?.didLoadMorePeople(with: indexPathsToAdd)
                     strongSelf.isLoadingMore = false
