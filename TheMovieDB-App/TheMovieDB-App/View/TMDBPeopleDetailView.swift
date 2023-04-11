@@ -7,10 +7,12 @@
 
 import UIKit
 
-class TMDBPeopleDetailView: UIView {
+final class TMDBPeopleDetailView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
+        backgroundColor = .systemBlue
     }
     
     required init?(coder: NSCoder) {
