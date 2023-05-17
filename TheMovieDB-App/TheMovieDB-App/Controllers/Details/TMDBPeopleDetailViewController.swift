@@ -28,6 +28,8 @@ final class TMDBPeopleDetailViewController: UIViewController {
         view.addSubview(detailView)
         navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(didTapShare))
         addConstraints()
+        detailView.collectionView?.delegate = self
+        detailView.collectionView?.dataSource = self
     }
     
     @objc
@@ -44,4 +46,18 @@ final class TMDBPeopleDetailViewController: UIViewController {
         ])
     }
     
+}
+
+//MARK: CollectionView
+
+extension TMDBPeopleDetailViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 20
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath)
+        cell.backgroundColor = .systemRed
+        return cell
+    }
 }
